@@ -1,3 +1,0 @@
-|**Tool** | **Functions**|
-|:--- |:--- |
-|Line | Colours|

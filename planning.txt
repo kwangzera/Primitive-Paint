@@ -1,0 +1,18 @@
+Pen:
+    Colours
+    Size
+    .Stroke type
+
+Line:
+    Colours
+    Size
+    Selectable after drawn -> resizable
+    .Line type -> Dotted, dashed
+
+Shapes (oval, rectangle, triangle):
+    Colours
+    Size
+    Selectable after drawn -> resizable
+
+.Bucket:
+    .Floodfill with bfs
