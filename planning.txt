@@ -6,12 +6,14 @@ Pen:
 Line:
     Colours
     Size
+    Thin, medium, thick border
     Selectable after drawn -> resizable
     .Line type -> Dotted, dashed
 
 Shapes (oval, rectangle, triangle):
     Colours
     Size
+    Thin, medium, thick border
     Selectable after drawn -> resizable
 
 .Bucket:
