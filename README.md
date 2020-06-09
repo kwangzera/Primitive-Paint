@@ -1,2 +1,2 @@
-# Primitive-Paint
-ICS3U7 Final Project
+# Primitive Paint
+ICS3U7 Final Project (WIP)
