@@ -1,23 +1,27 @@
 import java.awt.*;
 import javax.swing.*;
-
 import java.awt.event.*;
+import java.io.*;
 
 public class MyPanel extends JPanel {
-    // For the top
+    // For the topbar
     private JButton colour, save, clear, help, info;
-    
-    // For the sides (temporary var names)
-    private JButton a, b, c, d, e, f, g, h, i;
-    // private JButton[] lol = {a, b, c, d, e, f, g};
     private JLabel logo, thicknessLab, othersLab;
     private JSlider thickness;
     private JLabel putLogo;
 
+    // For the side buttons (temporary var names)
+    private JButton a, b, c, d, e, f, g, h, i;
+    private JButton[] sideButtons = {a, b, c, d, e, f, g, i};
+
     public MyPanel() {
-        // ImageIcon picture = new ImageIcon("assets/topbar/save.png");
-        // ImageIcon newDocIcon = new ImageIcon("assets/topbar/newDoc.png");
-        
+        File dir = new File("assets/tools");
+        File[] directoryListing = dir.listFiles();
+
+        for (File child : directoryListing) {
+            System.out.println(child);
+        }
+
         // temporary testing purposes
         String aa = "assets/tools/penTool.png";
         String bb = "assets/tools/lineTool.png";
@@ -38,6 +42,7 @@ public class MyPanel extends JPanel {
         ImageIcon ggg = new ImageIcon(gg);
         ImageIcon hhh = new ImageIcon(hh);
         ImageIcon iii = new ImageIcon(ii);
+        
         this.setPreferredSize(new Dimension(800, 561));
         this.setBackground(Color.WHITE);
 
@@ -82,7 +87,7 @@ public class MyPanel extends JPanel {
         chooseThickness.add(thickness);
         // chooseThickness.add(new JLabel("50"));
 
-        a = new JButton(aaa);
+        // a = new JButton(aaa);
         b = new JButton(bbb);
         c = new JButton(ccc);
         d = new JButton(ddd);
@@ -94,7 +99,7 @@ public class MyPanel extends JPanel {
         // i = new JButton(ph);
 
         sidebar.add(Box.createRigidArea(new Dimension(0, 8)));
-        sidebar.add(a);
+        sidebar.add(new JButton(aaa));
         sidebar.add(Box.createRigidArea(new Dimension(0, 8)));
         sidebar.add(b);
         sidebar.add(Box.createRigidArea(new Dimension(0, 8)));
@@ -111,23 +116,16 @@ public class MyPanel extends JPanel {
         sidebar.add(h);
         sidebar.add(Box.createRigidArea(new Dimension(0, 8)));
         sidebar.add(i);
-        // sidebar.add(Box.createRigidArea(new Dimension(0, 10)));
-        // sidebar.add(i);
-
 
         extras.add(save);
         extras.add(clear);
         extras.add(help);
         extras.add(info);
 
-        // topSelect.
         topSelect.add(logo);
         topSelect.add(chooseThickness);
-        // topSelect.add(actions);
         topSelect.add(extras);
 
-
-        // Change the grid layout to border layout to align North
         this.setLayout(new BorderLayout());
         this.add(topSelect, BorderLayout.NORTH);
         this.add(sidebar, BorderLayout.WEST);
