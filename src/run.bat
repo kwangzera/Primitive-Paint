@@ -1,4 +1,4 @@
-javac paint.java
+javac PaintApp.java
 pause
-java paint.java
+java PaintApp
 pause
