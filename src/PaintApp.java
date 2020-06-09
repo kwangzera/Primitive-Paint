@@ -1,5 +1,8 @@
 /*
-
+Kevin Wang
+June 9, 2020
+Final Project: Paint Application
+ICS3U7-02, Ms. Strelkovska
 */
 
 import java.awt.*;
