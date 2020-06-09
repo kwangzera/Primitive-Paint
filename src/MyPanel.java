@@ -18,7 +18,7 @@ public class MyPanel extends JPanel {
         ImageIcon picture = new ImageIcon("assets/save.png");
         ImageIcon newDocIcon = new ImageIcon("assets/newDoc.png");
         ImageIcon ph = new ImageIcon("assets/placeholder.png");
-        this.setPreferredSize(new Dimension(800, 600));
+        this.setPreferredSize(new Dimension(800, 526));
         this.setBackground(Color.WHITE);
 
         // Creating a topSelect JPanel for formatting
