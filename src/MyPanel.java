@@ -1,5 +1,6 @@
 import java.awt.*;
 import javax.swing.*;
+
 import java.awt.event.*;
 
 public class MyPanel extends JPanel {
@@ -7,7 +8,7 @@ public class MyPanel extends JPanel {
     private JButton colour, save, clear, help, info;
     
     // For the sides (temporary var names)
-    private JButton a, b, c, d, e, f, g, h, i;
+    private JButton a, b, c, d, e, f, g, h;
     // private JButton[] lol = {a, b, c, d, e, f, g};
     private JLabel logo, thicknessLab, othersLab;
     private JSlider thickness;
@@ -29,10 +30,11 @@ public class MyPanel extends JPanel {
         JPanel sidebar = new JPanel();
 
         // don't know why it won't let me set it in constructor of sidebar
-        GridLayout layout = new GridLayout(0, 1);
-        layout.setVgap(10);
-        // layout.setHgap(15);
+        BoxLayout layout = new BoxLayout(sidebar, BoxLayout.Y_AXIS);
         sidebar.setLayout(layout);
+        sidebar.setAlignmentX(Component.CENTER_ALIGNMENT);
+        sidebar.setBorder(BorderFactory.createEmptyBorder(0, 10, 0, 10));
+        // sidebar.setBorder(new EmptyBorder(new Insets(10, 10, 10, 10)));
         // Scrollbars for RGB
         thickness = new JSlider(JSlider.HORIZONTAL, 0, 50, 10);
         thickness.setMinorTickSpacing(5);
@@ -42,7 +44,8 @@ public class MyPanel extends JPanel {
 
         // Lables showing RGB amounts
         chooseThickness.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Thickness in Pixels"));
-        extras.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Others Actions"));
+        // actions.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Actions"));
+        extras.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Other Actions"));
         // thicknessLab = new JLabel("0");
         // othersLab = new JLabel("50");
 
@@ -67,17 +70,27 @@ public class MyPanel extends JPanel {
         f = new JButton(ph);
         g = new JButton(ph);
         h = new JButton(ph);
-        i = new JButton(ph);
+        // i = new JButton(ph);
 
+        sidebar.add(Box.createRigidArea(new Dimension(0, 10)));
         sidebar.add(a);
+        sidebar.add(Box.createRigidArea(new Dimension(0, 10)));
         sidebar.add(b);
+        sidebar.add(Box.createRigidArea(new Dimension(0, 10)));
         sidebar.add(c);
+        sidebar.add(Box.createRigidArea(new Dimension(0, 10)));
         sidebar.add(d);
+        sidebar.add(Box.createRigidArea(new Dimension(0, 10)));
         sidebar.add(e);
+        sidebar.add(Box.createRigidArea(new Dimension(0, 10)));
         sidebar.add(f);
+        sidebar.add(Box.createRigidArea(new Dimension(0, 10)));
         sidebar.add(g);
+        sidebar.add(Box.createRigidArea(new Dimension(0, 10)));
         sidebar.add(h);
-        sidebar.add(i);
+        // sidebar.add(Box.createRigidArea(new Dimension(0, 10)));
+        // sidebar.add(i);
+
 
         extras.add(save);
         extras.add(clear);
@@ -87,6 +100,7 @@ public class MyPanel extends JPanel {
         // topSelect.
         topSelect.add(logo);
         topSelect.add(chooseThickness);
+        // topSelect.add(actions);
         topSelect.add(extras);
 
 
