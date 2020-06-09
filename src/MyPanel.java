@@ -8,17 +8,37 @@ public class MyPanel extends JPanel {
     private JButton colour, save, clear, help, info;
     
     // For the sides (temporary var names)
-    private JButton a, b, c, d, e, f, g, h;
+    private JButton a, b, c, d, e, f, g, h, i;
     // private JButton[] lol = {a, b, c, d, e, f, g};
     private JLabel logo, thicknessLab, othersLab;
     private JSlider thickness;
     private JLabel putLogo;
 
     public MyPanel() {
-        ImageIcon picture = new ImageIcon("assets/save.png");
-        ImageIcon newDocIcon = new ImageIcon("assets/newDoc.png");
-        ImageIcon ph = new ImageIcon("assets/placeholder.png");
-        this.setPreferredSize(new Dimension(800, 526));
+        // ImageIcon picture = new ImageIcon("assets/topbar/save.png");
+        // ImageIcon newDocIcon = new ImageIcon("assets/topbar/newDoc.png");
+        
+        // temporary testing purposes
+        String aa = "assets/tools/penTool.png";
+        String bb = "assets/tools/lineTool.png";
+        String cc = "assets/tools/eraserTool.png";
+        String dd = "assets/tools/ovalBorderTool.png";
+        String ee = "assets/tools/ovalFillTool.png";
+        String ff = "assets/tools/rectBorderTool.png";
+        String gg = "assets/tools/rectFillTool.png";
+        String hh = "assets/tools/colourPicker.png";
+        String ii = "assets/tools/eyedropperTool.png";
+
+        ImageIcon aaa = new ImageIcon(aa);
+        ImageIcon bbb = new ImageIcon(bb);
+        ImageIcon ccc = new ImageIcon(cc);
+        ImageIcon ddd = new ImageIcon(dd);
+        ImageIcon eee = new ImageIcon(ee);
+        ImageIcon fff = new ImageIcon(ff);
+        ImageIcon ggg = new ImageIcon(gg);
+        ImageIcon hhh = new ImageIcon(hh);
+        ImageIcon iii = new ImageIcon(ii);
+        this.setPreferredSize(new Dimension(800, 561));
         this.setBackground(Color.WHITE);
 
         // Creating a topSelect JPanel for formatting
@@ -26,14 +46,14 @@ public class MyPanel extends JPanel {
         JPanel topSelect = new JPanel(new GridLayout());
         JPanel logo = new JPanel(new GridLayout());
         JPanel chooseThickness = new JPanel();
-        JPanel extras = new JPanel();
+        JPanel extras = new JPanel(new FlowLayout());
         JPanel sidebar = new JPanel();
 
         // don't know why it won't let me set it in constructor of sidebar
         BoxLayout layout = new BoxLayout(sidebar, BoxLayout.Y_AXIS);
         sidebar.setLayout(layout);
-        sidebar.setAlignmentX(Component.CENTER_ALIGNMENT);
-        sidebar.setBorder(BorderFactory.createEmptyBorder(0, 10, 0, 10));
+        // sidebar.setAlignmentY(Component.CENTER_ALIGNMENT);
+        sidebar.setBorder(BorderFactory.createEmptyBorder(0, 8, 0, 8));
         // sidebar.setBorder(new EmptyBorder(new Insets(10, 10, 10, 10)));
         // Scrollbars for RGB
         thickness = new JSlider(JSlider.HORIZONTAL, 0, 50, 10);
@@ -49,45 +69,48 @@ public class MyPanel extends JPanel {
         // thicknessLab = new JLabel("0");
         // othersLab = new JLabel("50");
 
-        putLogo = new JLabel(new ImageIcon("assets/logo.png"));
+        putLogo = new JLabel(new ImageIcon("assets/topbar/logo.png"));
 
         // array-fy this
         save = new JButton();
-        save.setIcon(new ImageIcon("assets/save.png"));
-        clear = new JButton(new ImageIcon("assets/newDoc.png"));
-        help = new JButton(new ImageIcon("assets/help.png"));
-        info = new JButton(new ImageIcon("assets/info.png"));
+        save.setIcon(new ImageIcon("assets/topbar/save.png"));
+        clear = new JButton(new ImageIcon("assets/topbar/newDoc.png"));
+        help = new JButton(new ImageIcon("assets/topbar/help.png"));
+        info = new JButton(new ImageIcon("assets/topbar/info.png"));
         logo.add(putLogo);
         // chooseThickness.add(new JLabel("0"));
         chooseThickness.add(thickness);
         // chooseThickness.add(new JLabel("50"));
 
-        a = new JButton(ph);
-        b = new JButton(ph);
-        c = new JButton(ph);
-        d = new JButton(ph);
-        e = new JButton(ph);
-        f = new JButton(ph);
-        g = new JButton(ph);
-        h = new JButton(ph);
+        a = new JButton(aaa);
+        b = new JButton(bbb);
+        c = new JButton(ccc);
+        d = new JButton(ddd);
+        e = new JButton(eee);
+        f = new JButton(fff);
+        g = new JButton(ggg);
+        h = new JButton(hhh);
+        i = new JButton(iii);
         // i = new JButton(ph);
 
-        sidebar.add(Box.createRigidArea(new Dimension(0, 10)));
+        sidebar.add(Box.createRigidArea(new Dimension(0, 8)));
         sidebar.add(a);
-        sidebar.add(Box.createRigidArea(new Dimension(0, 10)));
+        sidebar.add(Box.createRigidArea(new Dimension(0, 8)));
         sidebar.add(b);
-        sidebar.add(Box.createRigidArea(new Dimension(0, 10)));
+        sidebar.add(Box.createRigidArea(new Dimension(0, 8)));
         sidebar.add(c);
-        sidebar.add(Box.createRigidArea(new Dimension(0, 10)));
+        sidebar.add(Box.createRigidArea(new Dimension(0, 8)));
         sidebar.add(d);
-        sidebar.add(Box.createRigidArea(new Dimension(0, 10)));
+        sidebar.add(Box.createRigidArea(new Dimension(0, 8)));
         sidebar.add(e);
-        sidebar.add(Box.createRigidArea(new Dimension(0, 10)));
+        sidebar.add(Box.createRigidArea(new Dimension(0, 8)));
         sidebar.add(f);
-        sidebar.add(Box.createRigidArea(new Dimension(0, 10)));
+        sidebar.add(Box.createRigidArea(new Dimension(0, 8)));
         sidebar.add(g);
-        sidebar.add(Box.createRigidArea(new Dimension(0, 10)));
+        sidebar.add(Box.createRigidArea(new Dimension(0, 8)));
         sidebar.add(h);
+        sidebar.add(Box.createRigidArea(new Dimension(0, 8)));
+        sidebar.add(i);
         // sidebar.add(Box.createRigidArea(new Dimension(0, 10)));
         // sidebar.add(i);
 
