@@ -5,7 +5,7 @@ import java.io.*;
 
 public class MyPanel extends JPanel {
     // For the topbar
-    private int x = -10, y = -10;
+    private static int x = -10, y = -10;
 
     private JButton colour, save, clear, help, info;
     private JLabel logo, thicknessLab, othersLab;
@@ -20,9 +20,9 @@ public class MyPanel extends JPanel {
         File dir = new File("assets/tools");
         File[] directoryListing = dir.listFiles();
 
-        for (File child : directoryListing) {
-            System.out.println(child);
-        }
+        // for (File child : directoryListing) {
+        //     System.out.println(child);
+        // }
 
         // temporary testing purposes
         String aa = "assets/tools/penTool.png";
@@ -91,7 +91,7 @@ public class MyPanel extends JPanel {
 
         a = new JButton(aaa);
         Pen Pen1 = new Pen(this, a, -10, -10);
-
+        // repaint();
         b = new JButton(bbb);
         c = new JButton(ccc);
         d = new JButton(ddd);
@@ -140,13 +140,6 @@ public class MyPanel extends JPanel {
     //     if (e.getSource() == a) {
     //         System.out.println("hi"); 
     //     }
-    // }
-
-    // public void paintComponent(Graphics g) {
-    //     // add sliders later
-    //     // super.paintComponent(g);
-    //     g.setColor(Color.BLACK);
-    //     g.fillOval(x, y, 10, 10);
     // }
 
     // public void mouseMoved(MouseEvent e) {
