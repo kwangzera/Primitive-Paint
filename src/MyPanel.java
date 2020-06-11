@@ -5,6 +5,8 @@ import java.io.*;
 
 public class MyPanel extends JPanel {
     // For the topbar
+    private int x = -10, y = -10;
+
     private JButton colour, save, clear, help, info;
     private JLabel logo, thicknessLab, othersLab;
     private JSlider thickness;
@@ -44,7 +46,7 @@ public class MyPanel extends JPanel {
         ImageIcon iii = new ImageIcon(ii);
         
         this.setPreferredSize(new Dimension(800, 561));
-        this.setBackground(Color.WHITE);
+        // this.setBackground(Color.WHITE);
 
         // Creating a topSelect JPanel for formatting
         // GridBagLayout layout, like grid, but more customizable
@@ -87,7 +89,9 @@ public class MyPanel extends JPanel {
         chooseThickness.add(thickness);
         // chooseThickness.add(new JLabel("50"));
 
-        // a = new JButton(aaa);
+        a = new JButton(aaa);
+        Pen Pen1 = new Pen(this, a, -10, -10);
+
         b = new JButton(bbb);
         c = new JButton(ccc);
         d = new JButton(ddd);
@@ -97,9 +101,10 @@ public class MyPanel extends JPanel {
         h = new JButton(hhh);
         i = new JButton(iii);
         // i = new JButton(ph);
+        // a.addActionListener(this);
 
         sidebar.add(Box.createRigidArea(new Dimension(0, 8)));
-        sidebar.add(new JButton(aaa));
+        sidebar.add(a);
         sidebar.add(Box.createRigidArea(new Dimension(0, 8)));
         sidebar.add(b);
         sidebar.add(Box.createRigidArea(new Dimension(0, 8)));
@@ -125,9 +130,32 @@ public class MyPanel extends JPanel {
         topSelect.add(logo);
         topSelect.add(chooseThickness);
         topSelect.add(extras);
-
+        
         this.setLayout(new BorderLayout());
         this.add(topSelect, BorderLayout.NORTH);
         this.add(sidebar, BorderLayout.WEST);
     }
+
+    // public void actionPerformed(ActionEvent e) {
+    //     if (e.getSource() == a) {
+    //         System.out.println("hi"); 
+    //     }
+    // }
+
+    // public void paintComponent(Graphics g) {
+    //     // add sliders later
+    //     // super.paintComponent(g);
+    //     g.setColor(Color.BLACK);
+    //     g.fillOval(x, y, 10, 10);
+    // }
+
+    // public void mouseMoved(MouseEvent e) {
+
+    // }
+
+    // public void mouseDragged(MouseEvent e) {
+    //     x = e.getX();
+    //     y = e.getY();
+    //     repaint();
+    // }
 }

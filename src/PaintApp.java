@@ -6,7 +6,11 @@ ICS3U7-02, Ms. Strelkovska
 */
 
 import java.awt.*;
+import java.io.IOException;
+
 import javax.swing.*;
+
+// import javafx.scene.paint.Color;
 
 // run with bat
 public class PaintApp {
@@ -15,8 +19,9 @@ public class PaintApp {
         
         frame.setResizable(false);
         frame.setVisible(true);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setBackground(Color.WHITE);
 
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().add(new MyPanel());
         frame.pack();
     }
