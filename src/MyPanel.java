@@ -145,7 +145,9 @@ public class MyPanel extends JPanel {
     // public void mouseMoved(MouseEvent e) {
 
     // }
-
+    // public void paintComponent(Graphics g) {
+    //     Draw.Draw(g);
+    // }
     // public void mouseDragged(MouseEvent e) {
     //     x = e.getX();
     //     y = e.getY();

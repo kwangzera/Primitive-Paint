@@ -6,7 +6,7 @@ ICS3U7-02, Ms. Strelkovska
 */
 
 import java.awt.*;
-import java.io.IOException;
+// import java.io.IOException;
 
 import javax.swing.*;
 
@@ -14,6 +14,7 @@ import javax.swing.*;
 
 // run with bat
 public class PaintApp {
+    static MyPanel reePanel = new MyPanel();
     public static void main(String[] args) {
         JFrame frame = new JFrame("Primitive Paint");
         
@@ -22,7 +23,7 @@ public class PaintApp {
         frame.setBackground(Color.WHITE);
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.getContentPane().add(new MyPanel());
+        frame.getContentPane().add(reePanel);
         frame.pack();
     }
 }

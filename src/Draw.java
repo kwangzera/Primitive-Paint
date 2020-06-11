@@ -49,6 +49,6 @@ public class Draw extends JPanel implements ActionListener, MouseMotionListener 
         y = e.getY();
         
         System.out.println("drag");
-        this.repaint(100, 100, 10, 10);
+        repaint();
     }
 }
