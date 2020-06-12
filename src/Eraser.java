@@ -1,7 +1,7 @@
 import java.awt.*;
 
 
-public class Eraser extends Tool {
+public class Eraser extends Pen {
     public Eraser(MyPanel panel) {
         super(panel);
     }

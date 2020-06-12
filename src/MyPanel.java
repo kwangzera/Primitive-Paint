@@ -6,7 +6,9 @@ import java.awt.image.*;
 import javax.imageio.ImageIO;
 
 public class MyPanel extends JPanel implements MouseMotionListener, ActionListener {
-    private Tool currentTool = new Pen(this);
+    private Pen pen1 = new Pen(this);
+    private Eraser eraser1 = new Eraser(this);
+    private Tool currentTool = pen1;
     private static int x = -10, y = -10;
 
     private JButton save, clear, help, info;
@@ -103,7 +105,8 @@ public class MyPanel extends JPanel implements MouseMotionListener, ActionListen
         h = new JButton(hhh);
         i = new JButton(iii);
         // i = new JButton(ph);
-        save.addActionListener(this);
+        c.addActionListener(this);
+        a.addActionListener(this);
 
         sidebar.add(Box.createRigidArea(new Dimension(0, 8)));
         sidebar.add(a);
@@ -139,9 +142,11 @@ public class MyPanel extends JPanel implements MouseMotionListener, ActionListen
     }
 
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == save) {
-            System.out.println("hi");
-            save(PaintApp.panel);
+        if (e.getSource() == a) {
+            currentTool = pen1;
+            // save(PaintApp.panel);
+        } if (e.getSource() == c) {
+            currentTool = eraser1;
         }
     }
 
@@ -173,18 +178,12 @@ public class MyPanel extends JPanel implements MouseMotionListener, ActionListen
 
     public void save(MyPanel panel){
         BufferedImage paintImage = new BufferedImage(panel.getWidth(), panel.getHeight(), BufferedImage.TYPE_INT_RGB);
-        panel.paint(paintImage.getGraphics());   // paints into image's Graphics
-        // paintImage = new BufferedImage(800, 561, BufferedImage.TYPE_INT_RGB);
-        // Graphics g = paintImage.createGraphics();
-        // panel.paint(g);
-        // draw on paintImage using Graphics
+        panel.paint(paintImage.getGraphics());
 
-        // g.dispose();
-
-		try{
-			ImageIO.write(paintImage, "png", new File("lmao.png"));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+        try{
+            ImageIO.write(paintImage, "png", new File("lmao.png"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

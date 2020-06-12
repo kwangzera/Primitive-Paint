@@ -1,5 +1,3 @@
-del *.class
-
 javac PaintApp.java
 pause
 java PaintApp
