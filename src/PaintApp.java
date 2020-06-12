@@ -14,16 +14,19 @@ import javax.swing.*;
 
 // run with bat
 public class PaintApp {
-    static MyPanel reePanel = new MyPanel();
+    public static MyPanel panel = new MyPanel();
+
     public static void main(String[] args) {
         JFrame frame = new JFrame("Primitive Paint");
-        
+        // super("Primitive Paint");
+
         frame.setResizable(false);
         frame.setVisible(true);
         frame.setBackground(Color.WHITE);
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.getContentPane().add(reePanel);
+        frame.getContentPane().add(panel);
         frame.pack();
+        // new MyFrame();
     }
 }

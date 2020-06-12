@@ -2,23 +2,27 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 import java.io.*;
+import java.awt.image.*;
+import javax.imageio.ImageIO;
 
-public class MyPanel extends JPanel {
-    // For the topbar
+public class MyPanel extends JPanel implements MouseMotionListener, ActionListener {
+    private Tool currentTool = new Pen(this);
     private static int x = -10, y = -10;
 
-    private JButton colour, save, clear, help, info;
-    private JLabel logo, thicknessLab, othersLab;
+    private JButton save, clear, help, info;
+    // private JLabel logo, thicknessLab, othersLab;
     private JSlider thickness;
     private JLabel putLogo;
 
     // For the side buttons (temporary var names)
     private JButton a, b, c, d, e, f, g, h, i;
-    private JButton[] sideButtons = {a, b, c, d, e, f, g, i};
+    // private JButton[] sideButtons = {a, b, c, d, e, f, g, i};
+
+    public static BufferedImage paintImage;
 
     public MyPanel() {
-        File dir = new File("assets/tools");
-        File[] directoryListing = dir.listFiles();
+        // File dir = new File("assets/tools");
+        // File[] directoryListing = dir.listFiles();
 
         // for (File child : directoryListing) {
         //     System.out.println(child);
@@ -90,8 +94,6 @@ public class MyPanel extends JPanel {
         // chooseThickness.add(new JLabel("50"));
 
         a = new JButton(aaa);
-        Pen Pen1 = new Pen(this, a, -10, -10);
-        // repaint();
         b = new JButton(bbb);
         c = new JButton(ccc);
         d = new JButton(ddd);
@@ -101,7 +103,7 @@ public class MyPanel extends JPanel {
         h = new JButton(hhh);
         i = new JButton(iii);
         // i = new JButton(ph);
-        // a.addActionListener(this);
+        save.addActionListener(this);
 
         sidebar.add(Box.createRigidArea(new Dimension(0, 8)));
         sidebar.add(a);
@@ -130,27 +132,59 @@ public class MyPanel extends JPanel {
         topSelect.add(logo);
         topSelect.add(chooseThickness);
         topSelect.add(extras);
-        
+        this.addMouseMotionListener(this);
         this.setLayout(new BorderLayout());
         this.add(topSelect, BorderLayout.NORTH);
         this.add(sidebar, BorderLayout.WEST);
     }
 
-    // public void actionPerformed(ActionEvent e) {
-    //     if (e.getSource() == a) {
-    //         System.out.println("hi"); 
-    //     }
-    // }
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == save) {
+            System.out.println("hi");
+            save(PaintApp.panel);
+        }
+    }
 
-    // public void mouseMoved(MouseEvent e) {
+    public void mouseMoved(MouseEvent e) {
 
-    // }
-    // public void paintComponent(Graphics g) {
-    //     Draw.Draw(g);
-    // }
-    // public void mouseDragged(MouseEvent e) {
-    //     x = e.getX();
-    //     y = e.getY();
-    //     repaint();
-    // }
+    }
+
+    public void paintComponent(Graphics g) {
+        // super.paintComponent(g);
+        currentTool.draw(g);
+        // paint(g);
+        // g.drawImage(paintImage, 0, 0, null);
+    }
+
+    public int getMouseX() {
+        return x;
+    }
+
+    public int getMouseY() {
+        return y;
+    }
+
+    public void mouseDragged(MouseEvent e) {
+        x = e.getX();
+        y = e.getY();
+
+        repaint();
+    }
+
+    public void save(MyPanel panel){
+        BufferedImage paintImage = new BufferedImage(panel.getWidth(), panel.getHeight(), BufferedImage.TYPE_INT_RGB);
+        panel.paint(paintImage.getGraphics());   // paints into image's Graphics
+        // paintImage = new BufferedImage(800, 561, BufferedImage.TYPE_INT_RGB);
+        // Graphics g = paintImage.createGraphics();
+        // panel.paint(g);
+        // draw on paintImage using Graphics
+
+        // g.dispose();
+
+		try{
+			ImageIO.write(paintImage, "png", new File("lmao.png"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    }
 }
