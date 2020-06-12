@@ -1,10 +1,14 @@
 @echo off
 
-echo moved previously created .class files to bin
->nul del *.class
+echo creating bin\
+>nul mkdir bin
 
-echo compiling src/javac PaintApp.java
-javac PaintApp.java || (pause & exit /b)
-echo running src/java PaintApp
-java PaintApp
+echo compiling src\PaintApp.java
+javac -sourcepath src -d bin src\PaintApp.java || (pause & exit /b)
+echo running bin\PaintApp
+java -cp .;bin PaintApp
+
+echo deleting bin\
+>nul rmdir /q /s bin
+
 pause

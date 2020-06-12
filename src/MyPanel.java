@@ -155,8 +155,9 @@ public class MyPanel extends JPanel implements MouseMotionListener, ActionListen
     }
 
     public void paintComponent(Graphics g) {
+        Graphics2D g2d = (Graphics2D) g;
         // super.paintComponent(g);
-        currentTool.draw(g);
+        currentTool.draw(g2d);
         // paint(g);
         // g.drawImage(paintImage, 0, 0, null);
     }
