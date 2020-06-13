@@ -20,7 +20,7 @@ public class Canvas extends JPanel implements MouseMotionListener, MouseListener
 
     public Canvas() {
         this.setBackground(Color.RED);
-        this.setPreferredSize(new Dimension(420, 420));
+        // this.setPreferredSize(new Dimension(420, 420));
         this.addMouseMotionListener(this);
         this.addMouseListener(this);
     }
@@ -113,6 +113,6 @@ public class Canvas extends JPanel implements MouseMotionListener, MouseListener
         }
         // gonna get slow when arraylist is fat and large
         // if shapes;
-        // g.drawImage(paintImage, 0, 0, null);
+        // g.drawOval(0, 0, 400, 400);
     }
 }
