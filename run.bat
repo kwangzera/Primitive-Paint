@@ -3,10 +3,10 @@
 echo creating bin\
 >nul mkdir bin
 
-echo compiling src\PaintApp.java
-javac -sourcepath src -d bin src\PaintApp.java || (pause & exit /b)
-echo running bin\PaintApp
-java -cp .;bin PaintApp
+echo compiling src\Main.java
+javac -sourcepath src -d bin src\Main.java || (pause & exit /b)
+echo running bin\Main
+java -cp .;bin Main
 
 echo deleting bin\
 >nul rmdir /q /s bin

@@ -1,32 +1,24 @@
-/*
-Kevin Wang
-June 9, 2020
-Final Project: Paint Application
-ICS3U7-02, Ms. Strelkovska
-*/
-
-import java.awt.*;
-// import java.io.IOException;
-
 import javax.swing.*;
 
-// import javafx.scene.paint.Color;
+public class PaintApp extends JFrame {
+    public static Canvas canvas = new Canvas();
+    public static Sidebar sidebar = new Sidebar();
 
-// run with bat
-public class PaintApp {
-    public static MyPanel panel = new MyPanel();
+    public PaintApp() {
+        super("Primitive Paint");
 
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("Primitive Paint");
-        // super("Primitive Paint");
+        // canvas = new Canvas();
+        // sidebar = new Sidebar();
 
-        frame.setResizable(false);
-        frame.setVisible(true);
-        frame.setBackground(Color.WHITE);
+        // add(sidebar, "West");
+        add(canvas, "Center");
 
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.getContentPane().add(panel);
-        frame.pack();
-        // new MyFrame();
+        add(sidebar, "East");
+
+        this.setSize(800, 600);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); // set default close operation
+        this.setLocationRelativeTo(null); // set locating to the middle of the screen
+        this.setVisible(true);
+        // this.setBackground(Co);
     }
 }

@@ -5,11 +5,13 @@ import java.io.*;
 import java.awt.image.*;
 import javax.imageio.ImageIO;
 
-public class MyPanel extends JPanel implements MouseMotionListener, ActionListener {
-    private Pen pen1 = new Pen(this);
-    private Eraser eraser1 = new Eraser(this);
-    private Tool currentTool = pen1;
+public class MyPanel extends JPanel implements ActionListener {
     private static int x = -10, y = -10;
+    public static Canvas canvas = new Canvas();
+
+    private static Pen pen1 = new Pen(canvas);
+    private static Eraser eraser1 = new Eraser(canvas);
+    private static Tool currentTool = pen1;
 
     private JButton save, clear, help, info;
     // private JLabel logo, thicknessLab, othersLab;
@@ -29,7 +31,7 @@ public class MyPanel extends JPanel implements MouseMotionListener, ActionListen
         // for (File child : directoryListing) {
         //     System.out.println(child);
         // }
-
+        canvas.setBackground(Color.WHITE);
         // temporary testing purposes
         String aa = "assets/tools/penTool.png";
         String bb = "assets/tools/lineTool.png";
@@ -135,18 +137,22 @@ public class MyPanel extends JPanel implements MouseMotionListener, ActionListen
         topSelect.add(logo);
         topSelect.add(chooseThickness);
         topSelect.add(extras);
-        this.addMouseMotionListener(this);
+        // this.addMouseMotionListener(this);
         this.setLayout(new BorderLayout());
         this.add(topSelect, BorderLayout.NORTH);
         this.add(sidebar, BorderLayout.WEST);
+        this.add(canvas, BorderLayout.CENTER);
     }
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == a) {
-            currentTool = pen1;
+            System.out.println(199);
+            // currentTool = pen1;
             // save(PaintApp.panel);
         } if (e.getSource() == c) {
-            currentTool = eraser1;
+            System.out.println(299);
+            save(canvas);
+            // currentTool = eraser1;
         }
     }
 
@@ -154,32 +160,39 @@ public class MyPanel extends JPanel implements MouseMotionListener, ActionListen
 
     }
 
-    public void paintComponent(Graphics g) {
-        Graphics2D g2d = (Graphics2D) g;
-        // super.paintComponent(g);
-        currentTool.draw(g2d);
-        // paint(g);
-        // g.drawImage(paintImage, 0, 0, null);
-    }
+    // public void drawGrpahics(Graphics2D g2d) {
+    //     currentTool.draw(g2d);
+    // }
+        
+    // public void paintComponent(Graphics g) {
+    //     Graphics2D g2d = (Graphics2D) g;
+    //     // super.paintComponent(g2d);
+    //     // g.draw
+    //     currentTool.draw(g);
+    //     // paint(g);
+    //     // g.drawImage(paintImage, 0, 0, null);
+    // }
 
-    public int getMouseX() {
-        return x;
-    }
+    // public int getMouseX() {
+    //     return x;
+    // }
 
-    public int getMouseY() {
-        return y;
-    }
+    // public int getMouseY() {
+    //     return y;
+    // }
 
-    public void mouseDragged(MouseEvent e) {
-        x = e.getX();
-        y = e.getY();
+    // public void mouseDragged(MouseEvent e) {
+    //     System.out.println("DRAG");
+    //     x = e.getX();
+    //     y = e.getY();
 
-        repaint();
-    }
+    //     canvas.repaint();
+    // }
 
-    public void save(MyPanel panel){
-        BufferedImage paintImage = new BufferedImage(panel.getWidth(), panel.getHeight(), BufferedImage.TYPE_INT_RGB);
-        panel.paint(paintImage.getGraphics());
+    public void save(Canvas canvas){
+        BufferedImage paintImage = new BufferedImage(canvas.getWidth(), canvas.getHeight(), BufferedImage.TYPE_INT_RGB);
+        canvas.paint(paintImage.getGraphics());
+        // repaint();
 
         try{
             ImageIO.write(paintImage, "png", new File("lmao.png"));

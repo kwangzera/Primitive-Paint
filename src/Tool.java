@@ -1,10 +1,10 @@
 import java.awt.*;
 
 public abstract class Tool {
-    MyPanel panel;
+    Canvas canvas;
     public abstract void draw(Graphics g);
 
-    public Tool(MyPanel panel) {
-        this.panel = panel;
+    public Tool(Canvas canvas) {
+        this.canvas = canvas;
     }
 }
