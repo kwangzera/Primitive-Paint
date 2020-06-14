@@ -19,7 +19,7 @@ public class Canvas extends JPanel implements MouseMotionListener, MouseListener
     private int prev_x = x, prev_y = y;
 
     public Canvas() {
-        this.setBackground(Color.RED);
+        this.setBackground(Color.PINK);
         // this.setPreferredSize(new Dimension(420, 420));
         this.addMouseMotionListener(this);
         this.addMouseListener(this);
@@ -32,7 +32,7 @@ public class Canvas extends JPanel implements MouseMotionListener, MouseListener
         int new_y = e.getY();
 
         if (flag) {
-            int[] temp = {new_x, new_y, new_x, new_y, 20, 20};
+            int[] temp = {new_x, new_y, new_x, new_y, Topbar.getThickness(), Topbar.getThickness()};
             shapes.add(temp);
             System.out.println(Arrays.toString(temp));
             flag = false;
@@ -40,7 +40,7 @@ public class Canvas extends JPanel implements MouseMotionListener, MouseListener
             y = new_y;
 
         } else {            
-            int[] temp = {x, y, new_x, new_y, 20, 20};
+            int[] temp = {x, y, new_x, new_y, Topbar.getThickness(), Topbar.getThickness()};
             x = new_x;
             y = new_y;
 
@@ -84,6 +84,7 @@ public class Canvas extends JPanel implements MouseMotionListener, MouseListener
     public void mouseReleased(MouseEvent e){
         flag = false;
         System.out.println("unclicc");
+        System.out.println(Sidebar.getCurrentToolID());
     }
 
     public int getMouseX() {
@@ -103,7 +104,7 @@ public class Canvas extends JPanel implements MouseMotionListener, MouseListener
         // repaint();
         // paint(g);
 
-        g.setColor(Color.WHITE);
+        g.setColor(Color.GRAY);
         // g2.setStroke(new BasicStroke(3));
         for (int i = 0; i < shapes.size(); i++) {
             g2.setStroke(new BasicStroke(shapes.get(i)[5], BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));

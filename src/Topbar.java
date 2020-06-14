@@ -1,14 +1,19 @@
 import java.awt.*;
 import javax.swing.*;
+import javax.swing.event.*;
+// import javafx.beans.value.ChangeListener;
+
 import java.awt.event.*;
 import java.io.*;
 import java.awt.image.*;
 import javax.imageio.ImageIO;
 
-public class Topbar extends JPanel implements ActionListener {
+public class Topbar extends JPanel implements ActionListener, ChangeListener {
     private JButton save, clear, help, info;
     private JSlider thickness;
     private JLabel putLogo;
+    private static int thicknessValue = 10; //10 is defualt
+
     public Topbar() {
         // this.setPreferredSize(new Dimension(800, 0));
         super(new GridLayout());
@@ -49,6 +54,7 @@ public class Topbar extends JPanel implements ActionListener {
         // this.add(this);
         clear.addActionListener(this);
         save.addActionListener(this);
+        thickness.addChangeListener(this);
         
     }
 
@@ -64,6 +70,11 @@ public class Topbar extends JPanel implements ActionListener {
         }
     }
 
+    public void stateChanged(ChangeEvent e) {
+        // System.out.println(thickness.getValue());
+        thicknessValue = thickness.getValue();
+    }
+
     public void save(Canvas canvas){
         BufferedImage paintImage = new BufferedImage(canvas.getWidth(), canvas.getHeight(), BufferedImage.TYPE_INT_RGB);
         canvas.paint(paintImage.getGraphics());
@@ -74,6 +85,10 @@ public class Topbar extends JPanel implements ActionListener {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public static int getThickness() {
+        return thicknessValue;
     }
 
 }

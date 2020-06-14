@@ -6,7 +6,20 @@ import javax.imageio.ImageIO;
 import java.io.*;
 
 public class Sidebar extends JPanel implements ActionListener {
-    private JButton a, b, c, d, e, f, g, h, i;
+    private JButton a, b, c, d, ye, f, g, h, i;
+
+    // private static int 
+
+    /*
+    0: freehand tool
+    1: line tool
+    2: eraser tool
+    3: ellipse empty
+    4: ellipse fill
+    5: rect empty
+    6: rect fill
+    */
+    private static int currentToolID = 0;
 
 
     public Sidebar() {
@@ -20,38 +33,35 @@ public class Sidebar extends JPanel implements ActionListener {
         this.setLayout(layout);
         this.setBorder(BorderFactory.createEmptyBorder(0, 8, 0, 8));
 
-        String aa = "assets/tools/penTool.png";
-        String bb = "assets/tools/lineTool.png";
-        String cc = "assets/tools/eraserTool.png";
-        String dd = "assets/tools/ovalBorderTool.png";
-        String ee = "assets/tools/ovalFillTool.png";
-        String ff = "assets/tools/rectBorderTool.png";
-        String gg = "assets/tools/rectFillTool.png";
-        String hh = "assets/tools/colourPicker.png";
-        String ii = "assets/tools/eyedropperTool.png";
+        // getClass.getResource() can display images in vscode
+        // Icon aaa = new ImageIcon(("assets/tools/penTool.png"));
+        // Icon bbb = new ImageIcon(("assets/tools/lineTool.png"));
+        // Icon ccc = new ImageIcon(("assets/tools/eraserTool.png"));
+        // Icon ddd = new ImageIcon(("assets/tools/ovalBorderTool.png"));
+        // Icon eee = new ImageIcon(("assets/tools/ovalFillTool.png"));
+        // Icon fff = new ImageIcon(("assets/tools/rectBorderTool.png"));
+        // Icon ggg = new ImageIcon(("assets/tools/rectFillTool.png"));
+        // Icon hhh = new ImageIcon(("assets/tools/colourPicker.png"));
+        // ImageIcon iii = new ImageIcon(("assets/tools/penTool.png"));
 
-        ImageIcon aaa = new ImageIcon(aa);
-        ImageIcon bbb = new ImageIcon(bb);
-        ImageIcon ccc = new ImageIcon(cc);
-        ImageIcon ddd = new ImageIcon(dd);
-        ImageIcon eee = new ImageIcon(ee);
-        ImageIcon fff = new ImageIcon(ff);
-        ImageIcon ggg = new ImageIcon(gg);
-        ImageIcon hhh = new ImageIcon(hh);
-        ImageIcon iii = new ImageIcon(ii);
-
-        a = new JButton(aaa);
-        b = new JButton(bbb);
-        c = new JButton(ccc);
-        d = new JButton(ddd);
-        e = new JButton(eee);
-        f = new JButton(fff);
-        g = new JButton(ggg);
-        h = new JButton(hhh);
+        a = new JButton(new ImageIcon("assets/tools/penTool.png"));
+        b = new JButton(new ImageIcon("assets/tools/lineTool.png"));
+        c = new JButton(new ImageIcon("assets/tools/eraserTool.png"));
+        d = new JButton(new ImageIcon("assets/tools/ovalBorderTool.png"));
+        ye = new JButton(new ImageIcon("assets/tools/ovalFillTool.png"));
+        f = new JButton(new ImageIcon("assets/tools/rectBorderTool.png"));
+        g = new JButton(new ImageIcon("assets/tools/rectFillTool.png"));
+        h = new JButton(new ImageIcon("assets/tools/colourPicker.png"));
         // i = new JButton(iii);
         // i = new JButton(ph);
-        c.addActionListener(this);
         a.addActionListener(this);
+        b.addActionListener(this);
+        c.addActionListener(this);
+        d.addActionListener(this);
+        ye.addActionListener(this);
+        f.addActionListener(this);
+        g.addActionListener(this);
+        h.addActionListener(this);
 
         this.add(Box.createRigidArea(new Dimension(0, 8)));
         this.add(a);
@@ -62,7 +72,7 @@ public class Sidebar extends JPanel implements ActionListener {
         this.add(Box.createRigidArea(new Dimension(0, 8)));
         this.add(d);
         this.add(Box.createRigidArea(new Dimension(0, 8)));
-        this.add(e);
+        this.add(ye);
         this.add(Box.createRigidArea(new Dimension(0, 8)));
         this.add(f);
         this.add(Box.createRigidArea(new Dimension(0, 8)));
@@ -77,16 +87,42 @@ public class Sidebar extends JPanel implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == a) {
-            // Canvas.shapes.clear();
+            currentToolID = 0;
+            System.out.println("b0");
+
+        } if (e.getSource() == b) {
+            currentToolID = 1;
             System.out.println("b1");
-            // System.out.println(Canvas.shapes.size());
-            // System.out.println(199);
-            // PaintApp.canvas.repaint();
+
         } if (e.getSource() == c) {
+            currentToolID = 2;
             System.out.println("b2");
-            // save(PaintApp.canvas);
-            // currentTool = eraser1;
+
+        } if (e.getSource() == d) {
+            currentToolID = 3;
+            System.out.println("b3");
+
+        } if (e.getSource() == ye) {
+            currentToolID = 4;
+            System.out.println("b4");
+
+        } if (e.getSource() == f) {
+            currentToolID = 5;
+            System.out.println("b5");
+
+        } if (e.getSource() == g) {
+            currentToolID = 6;
+            System.out.println("b6");
+
+        // Colour choose tool
+        } if (e.getSource() == h) {
+            currentToolID = 7;
+            System.out.println("colour prompt opens");
         }
+    }
+
+    public static int getCurrentToolID() {
+        return currentToolID;
     }
 
 }
