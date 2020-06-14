@@ -32,7 +32,7 @@ public class Canvas extends JPanel implements MouseMotionListener, MouseListener
         int new_y = e.getY();
 
         if (flag) {
-            int[] temp = {new_x, new_y, new_x, new_y, 21, 21};
+            int[] temp = {new_x, new_y, new_x, new_y, 20, 20};
             shapes.add(temp);
             System.out.println(Arrays.toString(temp));
             flag = false;
@@ -40,7 +40,7 @@ public class Canvas extends JPanel implements MouseMotionListener, MouseListener
             y = new_y;
 
         } else {            
-            int[] temp = {x, y, new_x, new_y, 21, 21};
+            int[] temp = {x, y, new_x, new_y, 20, 20};
             x = new_x;
             y = new_y;
 
@@ -106,7 +106,7 @@ public class Canvas extends JPanel implements MouseMotionListener, MouseListener
         g.setColor(Color.WHITE);
         // g2.setStroke(new BasicStroke(3));
         for (int i = 0; i < shapes.size(); i++) {
-            g2.setStroke(new BasicStroke(shapes.get(i)[5]));
+            g2.setStroke(new BasicStroke(shapes.get(i)[5], BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
             // g2.fill(new Ellipse2D.Double(i[0]-5, i[1]-5, i[5], i[5]));
             g.drawLine(shapes.get(i)[0], shapes.get(i)[1], shapes.get(i)[2], shapes.get(i)[3]);
 

@@ -24,6 +24,7 @@ public class PaintApp extends JFrame {
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); // set default close operation
         this.setLocationRelativeTo(null); // set locating to the middle of the screen
         this.setVisible(true);
+        this.setResizable(false);
         // this.setBackground(Co);
     }
 }
