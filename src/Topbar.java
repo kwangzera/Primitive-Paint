@@ -12,7 +12,7 @@ public class Topbar extends JPanel implements ActionListener, ChangeListener {
     private JButton save, clear, help, info;
     private JSlider thickness;
     private JLabel putLogo;
-    private static int thicknessValue = 10; //10 is defualt
+    public static int thicknessValue = 10; //10 is defualt
 
     public Topbar() {
         // this.setPreferredSize(new Dimension(800, 0));
@@ -86,9 +86,4 @@ public class Topbar extends JPanel implements ActionListener, ChangeListener {
             e.printStackTrace();
         }
     }
-
-    public static int getThickness() {
-        return thicknessValue;
-    }
-
 }

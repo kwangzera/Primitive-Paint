@@ -19,7 +19,7 @@ public class Sidebar extends JPanel implements ActionListener {
     5: rect empty
     6: rect fill
     */
-    private static int currentToolID = 0;
+    public static int currentToolID = 0;
 
 
     public Sidebar() {
@@ -120,9 +120,4 @@ public class Sidebar extends JPanel implements ActionListener {
             System.out.println("colour prompt opens");
         }
     }
-
-    public static int getCurrentToolID() {
-        return currentToolID;
-    }
-
 }

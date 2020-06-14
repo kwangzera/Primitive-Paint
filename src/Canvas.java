@@ -32,7 +32,7 @@ public class Canvas extends JPanel implements MouseMotionListener, MouseListener
         int new_y = e.getY();
 
         if (flag) {
-            int[] temp = {new_x, new_y, new_x, new_y, Topbar.getThickness(), Topbar.getThickness()};
+            int[] temp = {new_x, new_y, new_x, new_y, Topbar.thicknessValue, Topbar.thicknessValue};
             shapes.add(temp);
             System.out.println(Arrays.toString(temp));
             flag = false;
@@ -40,7 +40,7 @@ public class Canvas extends JPanel implements MouseMotionListener, MouseListener
             y = new_y;
 
         } else {            
-            int[] temp = {x, y, new_x, new_y, Topbar.getThickness(), Topbar.getThickness()};
+            int[] temp = {x, y, new_x, new_y, Topbar.thicknessValue, Topbar.thicknessValue};
             x = new_x;
             y = new_y;
 
@@ -84,7 +84,7 @@ public class Canvas extends JPanel implements MouseMotionListener, MouseListener
     public void mouseReleased(MouseEvent e){
         flag = false;
         System.out.println("unclicc");
-        System.out.println(Sidebar.getCurrentToolID());
+        System.out.println(Sidebar.currentToolID);
     }
 
     public int getMouseX() {

@@ -14,9 +14,21 @@ import java.awt.*;
 //     }
 // }
 
-
 public class Pen extends Tool {
-    public Pen() {
-        
+    this.startX = startX;
+    this.startY = startY;
+    this.endX = endX;
+    this.endY = endY;
+    this.brushColour = brushColour;
+    this.brushWidth = brushWidth;
+    
+    public Pen(int startX, int startY, int endX, int endY, Color brushColour, int brushWidth) {
+        this.startX = startX;
+        this.startY = startY;
+        this.endX = endX;
+        this.endY = endY;
+        this.brushColour = brushColour;
+        this.brushWidth = brushWidth;
+
     }
 }
