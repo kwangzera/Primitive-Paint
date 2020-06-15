@@ -8,6 +8,7 @@ public class Eraser extends Pen {
         super();
     }
 
+    // @Override
     public void mouseDrag(ArrayList<InfoTool> strokes, MouseEvent event) {
         this.x2 = event.getX();
         this.y2 = event.getY();
@@ -16,4 +17,5 @@ public class Eraser extends Pen {
         y1 = y2;
         System.out.println(x2 + ", " + y2);
     }
+
 }

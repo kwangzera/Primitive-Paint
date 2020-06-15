@@ -87,7 +87,7 @@ public class Sidebar extends JPanel implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == a) {
-            currentToolID = 0;
+            Canvas.curr = Canvas.pen1;
             System.out.println("b0");
 
         } if (e.getSource() == b) {
@@ -95,7 +95,7 @@ public class Sidebar extends JPanel implements ActionListener {
             System.out.println("b1");
 
         } if (e.getSource() == c) {
-            currentToolID = 2;
+            Canvas.curr = Canvas.eraser;
             System.out.println("b2");
 
         } if (e.getSource() == d) {

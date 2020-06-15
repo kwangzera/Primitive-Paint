@@ -20,9 +20,11 @@ public class Canvas extends JPanel implements MouseMotionListener, MouseListener
         // this.setPreferredSize(new Dimension(420, 420));
         this.addMouseMotionListener(this);
         this.addMouseListener(this);
+        
     }
 
     public void mouseDragged(MouseEvent e) {
+        System.out.println(Sidebar.currentToolID);
         this.curr.mouseDrag(shapes, e);
         this.repaint();
     }

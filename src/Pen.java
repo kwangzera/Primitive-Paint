@@ -40,11 +40,13 @@ public class Pen extends Tool implements Mouse {
     public void mouseUp(ArrayList<InfoTool> strokes, MouseEvent event) {
         this.x2 = event.getX();
         this.y2 = event.getY();
+        x1 = x2;
+        y1 = y2;
     }
 
     public void mouseDown(ArrayList<InfoTool> strokes, MouseEvent event) {
-        this.x1 = event.getX();
-        this.y1 = event.getY();
+        this.x1 = this.x2 = event.getX();
+        this.y1 = this.y2 = event.getY();
     }
 
     public void test() {
