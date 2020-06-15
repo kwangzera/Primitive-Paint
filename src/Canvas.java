@@ -10,7 +10,7 @@ import java.util.*;
 
 public class Canvas extends JPanel implements MouseMotionListener, MouseListener {
     // public static int[] temp = new int[6];
-    public static ArrayList<int[]> shapes = new ArrayList<int[]>();
+    public static ArrayList<InfoTool> shapes = new ArrayList<>();
     private boolean flag = true;
     // private Pen pen1 = new Pen(this);
     // private Eraser eraser1 = new Eraser(this);
@@ -18,6 +18,9 @@ public class Canvas extends JPanel implements MouseMotionListener, MouseListener
     private static int x = -10, y = -10;
     private int prev_x = x, prev_y = y;
 
+    public static Mouse pen1 = new Pen();
+    public static Mouse curr = pen1;
+    // public static Tool curr = new Tool();
     public Canvas() {
         this.setBackground(Color.PINK);
         // this.setPreferredSize(new Dimension(420, 420));
@@ -26,37 +29,22 @@ public class Canvas extends JPanel implements MouseMotionListener, MouseListener
     }
 
     public void mouseDragged(MouseEvent e) {
-        // int[] temp;
-        // boolean flag = true;
-        int new_x = e.getX();
-        int new_y = e.getY();
-
-        if (flag) {
-            int[] temp = {new_x, new_y, new_x, new_y, Topbar.thicknessValue, Topbar.thicknessValue};
-            shapes.add(temp);
-            System.out.println(Arrays.toString(temp));
-            flag = false;
-            x = new_x;
-            y = new_y;
-
-        } else {            
-            int[] temp = {x, y, new_x, new_y, Topbar.thicknessValue, Topbar.thicknessValue};
-            x = new_x;
-            y = new_y;
-
-            shapes.add(temp);
-            System.out.println("dragged: "+ Arrays.toString(temp));
-            
-            // temp[0] = x;
-            // temp[1] = y;
-            // temp[2] = new_x;
-            // temp[3] = new_y;
-            // temp[4] = 10;
-            // temp[5] = 10;
-
-            // shapes.add(temp);
-        }
+        this.curr.mouseDrag(shapes, e);
         this.repaint();
+    }
+
+    public void mousePressed(MouseEvent e){
+        this.curr.mouseDown(shapes, e);
+        flag = true;
+        System.out.println("click");
+        System.out.println(shapes);
+    }
+
+    public void mouseReleased(MouseEvent e){
+        this.curr.mouseUp(shapes, e);
+        flag = false;
+        System.out.println("unclicc");
+        System.out.println(Sidebar.currentToolID);
     }
 
     public void mouseMoved(MouseEvent e) {
@@ -76,25 +64,6 @@ public class Canvas extends JPanel implements MouseMotionListener, MouseListener
 
     }
 
-    public void mousePressed(MouseEvent e){
-        flag = true;
-        System.out.println("click");
-    }
-
-    public void mouseReleased(MouseEvent e){
-        flag = false;
-        System.out.println("unclicc");
-        System.out.println(Sidebar.currentToolID);
-    }
-
-    public int getMouseX() {
-        return x;
-    }
-
-    public int getMouseY() {
-        return y;
-    }
-
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
@@ -104,16 +73,14 @@ public class Canvas extends JPanel implements MouseMotionListener, MouseListener
         // repaint();
         // paint(g);
 
-        g.setColor(Color.GRAY);
+        g.setColor(Color.BLUE);
+        g2.setStroke(new BasicStroke(5, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
         // g2.setStroke(new BasicStroke(3));
-        for (int i = 0; i < shapes.size(); i++) {
-            g2.setStroke(new BasicStroke(shapes.get(i)[5], BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
-            // g2.fill(new Ellipse2D.Double(i[0]-5, i[1]-5, i[5], i[5]));
-            g.drawLine(shapes.get(i)[0], shapes.get(i)[1], shapes.get(i)[2], shapes.get(i)[3]);
-
+        for (InfoTool i : shapes) {
+            i.draw(g);
         }
         // gonna get slow when arraylist is fat and large
         // if shapes;
-        // g.drawOval(0, 0, 400, 400);
+        g.drawOval(0, 0, 400, 400);
     }
 }
