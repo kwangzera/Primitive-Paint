@@ -13,14 +13,17 @@ public class Topbar extends JPanel implements ActionListener, ChangeListener {
     private JSlider thickness;
     private JLabel putLogo;
     public static int thicknessValue = 10; //10 is defualt
-
+    private Help helpPanel;
     public Topbar() {
+
         // this.setPreferredSize(new Dimension(800, 0));
         super(new GridLayout());
         // JPanel topSelect = new JPanel(new GridLayout());
         JPanel logo = new JPanel();
         JPanel chooseThickness = new JPanel();
         JPanel extras = new JPanel();
+        // d = new JDialog(d, "test title", true);
+
 
         chooseThickness.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Thickness in Pixels"));
         // actions.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Actions"));
@@ -54,19 +57,29 @@ public class Topbar extends JPanel implements ActionListener, ChangeListener {
         // this.add(this);
         clear.addActionListener(this);
         save.addActionListener(this);
+        help.addActionListener(this);
+        info.addActionListener(this);
         thickness.addChangeListener(this);
         
     }
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == clear) {
-            Canvas.shapes.clear();
-            // System.out.println("Yeet");
-            // System.out.println(Canvas.shapes.size());
-            System.out.println(199);
-            PaintApp.canvas.repaint();
+            int result = JOptionPane.showConfirmDialog(Main.paint, "Clear current screen contents?","Clear Screen", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+            
+            if (JOptionPane.YES_OPTION == result) {
+                Canvas.shapes.clear();
+                PaintApp.canvas.repaint();
+            }
+
         } if (e.getSource() == save) {
             save(PaintApp.canvas);
+
+        } if (e.getSource() == help) {
+            helpPanel = new Help();
+
+        } if (e.getSource() == info) {
+            JOptionPane.showMessageDialog(Main.paint, "Version 1.0.0", "Info", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 
@@ -75,7 +88,8 @@ public class Topbar extends JPanel implements ActionListener, ChangeListener {
         thicknessValue = thickness.getValue();
     }
 
-    public void save(Canvas canvas){
+
+    public void save(Canvas canvas) {
         BufferedImage paintImage = new BufferedImage(canvas.getWidth(), canvas.getHeight(), BufferedImage.TYPE_INT_RGB);
         canvas.paint(paintImage.getGraphics());
         // repaint();

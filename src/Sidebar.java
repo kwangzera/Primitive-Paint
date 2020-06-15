@@ -7,20 +7,7 @@ import java.io.*;
 
 public class Sidebar extends JPanel implements ActionListener {
     private JButton a, b, c, d, ye, f, g, h, i;
-
-    // private static int 
-
-    /*
-    0: freehand tool
-    1: line tool
-    2: eraser tool
-    3: ellipse empty
-    4: ellipse fill
-    5: rect empty
-    6: rect fill
-    */
     public static int currentToolID = 0;
-
 
     public Sidebar() {
         super();
@@ -32,17 +19,6 @@ public class Sidebar extends JPanel implements ActionListener {
         BoxLayout layout = new BoxLayout(this, BoxLayout.Y_AXIS);
         this.setLayout(layout);
         this.setBorder(BorderFactory.createEmptyBorder(0, 8, 0, 8));
-
-        // getClass.getResource() can display images in vscode
-        // Icon aaa = new ImageIcon(("assets/tools/penTool.png"));
-        // Icon bbb = new ImageIcon(("assets/tools/lineTool.png"));
-        // Icon ccc = new ImageIcon(("assets/tools/eraserTool.png"));
-        // Icon ddd = new ImageIcon(("assets/tools/ovalBorderTool.png"));
-        // Icon eee = new ImageIcon(("assets/tools/ovalFillTool.png"));
-        // Icon fff = new ImageIcon(("assets/tools/rectBorderTool.png"));
-        // Icon ggg = new ImageIcon(("assets/tools/rectFillTool.png"));
-        // Icon hhh = new ImageIcon(("assets/tools/colourPicker.png"));
-        // ImageIcon iii = new ImageIcon(("assets/tools/penTool.png"));
 
         a = new JButton(new ImageIcon("assets/tools/penTool.png"));
         b = new JButton(new ImageIcon("assets/tools/lineTool.png"));

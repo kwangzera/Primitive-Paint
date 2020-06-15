@@ -20,7 +20,6 @@ public class PaintApp extends JFrame {
         add(canvas, "Center");
         // System.out.println(topbar.getHeight());
         this.setSize(800, 600);
-        System.out.println(topbar.getHeight());
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); // set default close operation
         this.setLocationRelativeTo(null); // set locating to the middle of the screen
         this.setVisible(true);
