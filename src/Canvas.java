@@ -66,21 +66,23 @@ public class Canvas extends JPanel implements MouseMotionListener, MouseListener
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        Graphics2D g2 = (Graphics2D) g;
+        // Graphics2D g2 = (Graphics2D) g;
         // Graphics2D g2d = (Graphics2D) g;
         // super.paintComponent(g2d);
         // currentTool.draw(g2d);
         // repaint();
         // paint(g);
 
-        g.setColor(Color.BLUE);
-        g2.setStroke(new BasicStroke(5, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
+        // g.setColor(Color.BLUE);
+        // g2.setStroke(new BasicStroke(Topbar.thicknessValue, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
         // g2.setStroke(new BasicStroke(3));
         for (InfoTool i : shapes) {
+            g.setColor(Color.BLUE);
+            // g2.setStroke(new BasicStroke(Topbar.thicknessValue, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
             i.draw(g);
         }
         // gonna get slow when arraylist is fat and large
         // if shapes;
-        g.drawOval(0, 0, 400, 400);
+        // g.drawOval(0, 0, 400, 400);
     }
 }
