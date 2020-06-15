@@ -1,23 +1,17 @@
 import java.awt.*;
 import javax.swing.*;
-import javax.swing.event.MouseInputListener;
-import java.awt.geom.*;
 import java.awt.event.*;
-import java.io.*;
-import java.awt.image.*;
-import javax.imageio.ImageIO;
 import java.util.*;
 
 public class Canvas extends JPanel implements MouseMotionListener, MouseListener {
     // public static int[] temp = new int[6];
     public static ArrayList<InfoTool> shapes = new ArrayList<>();
-    private boolean flag = true;
     // private Pen pen1 = new Pen(this);
     // private Eraser eraser1 = new Eraser(this);
     // private Tool currentTool = pen1;
     private static int x = -10, y = -10;
-    private int prev_x = x, prev_y = y;
 
+    public static Mouse eraser = new Eraser();
     public static Mouse pen1 = new Pen();
     public static Mouse curr = pen1;
     // public static Tool curr = new Tool();
@@ -35,14 +29,12 @@ public class Canvas extends JPanel implements MouseMotionListener, MouseListener
 
     public void mousePressed(MouseEvent e){
         this.curr.mouseDown(shapes, e);
-        flag = true;
         System.out.println("click");
         System.out.println(shapes);
     }
 
     public void mouseReleased(MouseEvent e){
         this.curr.mouseUp(shapes, e);
-        flag = false;
         System.out.println("unclicc");
         System.out.println(Sidebar.currentToolID);
     }
@@ -77,7 +69,6 @@ public class Canvas extends JPanel implements MouseMotionListener, MouseListener
         // g2.setStroke(new BasicStroke(Topbar.thicknessValue, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
         // g2.setStroke(new BasicStroke(3));
         for (InfoTool i : shapes) {
-            g.setColor(Color.BLUE);
             // g2.setStroke(new BasicStroke(Topbar.thicknessValue, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
             i.draw(g);
         }

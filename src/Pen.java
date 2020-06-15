@@ -18,7 +18,6 @@ import java.util.Arrays;
 // }
 
 public class Pen extends Tool implements Mouse {
-    private boolean flag = true;
     // private Pen pen1 = new Pen(this);
     // private Eraser eraser1 = new Eraser(this);
     // private Tool currentTool = pen1;
@@ -32,7 +31,7 @@ public class Pen extends Tool implements Mouse {
     public void mouseDrag(ArrayList<InfoTool> strokes, MouseEvent event) {
         this.x2 = event.getX();
         this.y2 = event.getY();
-        strokes.add(new InfoPen(x1, y1, x2, y2, Topbar.thicknessValue));
+        strokes.add(new InfoPen(x1, y1, x2, y2, Topbar.thicknessValue, Color.DARK_GRAY));
         x1 = x2;
         y1 = y2;
         System.out.println(x2 + ", " + y2);
