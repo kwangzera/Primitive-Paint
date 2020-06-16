@@ -16,13 +16,17 @@ public class Help {
 
     public Help() {
         JTabbedPane tp = new JTabbedPane();
+
         tp.add("Pen", penHelp);
+        penHelp.setVerticalAlignment(JLabel.TOP);
         penHelp.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
 
-        penHelp.setVerticalAlignment(JLabel.TOP);
         tp.add("Eraser", lineHelp);
+        lineHelp.setVerticalAlignment(JLabel.TOP);
+        lineHelp.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
 
         JDialog dialog = new JDialog(Main.paint, "Help", Dialog.ModalityType.DOCUMENT_MODAL);
+
         dialog.add(tp);
         dialog.setSize(400, 300);
         dialog.setResizable(false);

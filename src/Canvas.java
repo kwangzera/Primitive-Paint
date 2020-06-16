@@ -16,7 +16,7 @@ public class Canvas extends JPanel implements MouseMotionListener, MouseListener
     public static Mouse curr = pen1;
     // public static Tool curr = new Tool();
     public Canvas() {
-        this.setBackground(Color.PINK);
+        this.setBackground(Color.WHITE);
         // this.setPreferredSize(new Dimension(420, 420));
         this.addMouseMotionListener(this);
         this.addMouseListener(this);
@@ -33,12 +33,14 @@ public class Canvas extends JPanel implements MouseMotionListener, MouseListener
         this.curr.mouseDown(shapes, e);
         System.out.println("click");
         System.out.println(shapes);
+        this.repaint();
     }
 
     public void mouseReleased(MouseEvent e){
         this.curr.mouseUp(shapes, e);
         System.out.println("unclicc");
         System.out.println(Sidebar.currentToolID);
+        this.repaint();
     }
 
     public void mouseMoved(MouseEvent e) {

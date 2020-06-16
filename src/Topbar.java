@@ -2,17 +2,19 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.event.*;
 // import javafx.beans.value.ChangeListener;
-
+import javax.swing.filechooser.*;
 import java.awt.event.*;
 import java.io.*;
 import java.awt.image.*;
 import javax.imageio.ImageIO;
+
 
 public class Topbar extends JPanel implements ActionListener, ChangeListener {
     private JButton save, clear, help, info;
     private JSlider thickness;
     private JLabel putLogo;
     public static int thicknessValue = 10; //10 is defualt
+    JFileChooser fileChooser;
     private Help helpPanel;
     public Topbar() {
 
@@ -93,11 +95,27 @@ public class Topbar extends JPanel implements ActionListener, ChangeListener {
         BufferedImage paintImage = new BufferedImage(canvas.getWidth(), canvas.getHeight(), BufferedImage.TYPE_INT_RGB);
         canvas.paint(paintImage.getGraphics());
         // repaint();
+        File userDir = new File(System.getProperty("user.dir"));
 
-        try{
-            ImageIO.write(paintImage, "png", new File("lmao.png"));
-        } catch (Exception e) {
-            e.printStackTrace();
+        fileChooser = new JFileChooser(userDir);
+        fileChooser.setFileFilter(new FileNameExtensionFilter("*.png", "png"));
+
+        // fileChooser.setFileFilter(new PNGFileFilter());
+        int saveVal = fileChooser.showSaveDialog(Main.paint);
+
+        File file = fileChooser.getSelectedFile();
+        String fileName = file.getAbsolutePath();
+
+        if (!fileName.endsWith(".png")) {
+            fileName += ".png";
+        }
+
+        if (saveVal == JFileChooser.APPROVE_OPTION) {
+            try {
+                ImageIO.write(paintImage, "png", new File(fileName));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

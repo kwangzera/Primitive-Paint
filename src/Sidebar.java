@@ -8,6 +8,7 @@ import java.io.*;
 public class Sidebar extends JPanel implements ActionListener {
     private JButton a, b, c, d, ye, f, g, h, i;
     public static int currentToolID = 0;
+    public static Color currentColor = Color.BLACK;
 
     public Sidebar() {
         super();
@@ -28,7 +29,7 @@ public class Sidebar extends JPanel implements ActionListener {
         f = new JButton(new ImageIcon("assets/tools/rectBorderTool.png"));
         g = new JButton(new ImageIcon("assets/tools/rectFillTool.png"));
         h = new JButton(new ImageIcon("assets/tools/colourPicker.png"));
-        // i = new JButton(iii);
+        // i = new JButton(new ImageIcon("assets/tools/colourPickerBG.png"));
         // i = new JButton(ph);
         a.addActionListener(this);
         b.addActionListener(this);
@@ -93,7 +94,7 @@ public class Sidebar extends JPanel implements ActionListener {
         // Colour choose tool
         } if (e.getSource() == h) {
             currentToolID = 7;
-            System.out.println("colour prompt opens");
+            currentColor = JColorChooser.showDialog(Main.paint, "Pick a Colour", Color.BLACK);
         }
     }
 }
