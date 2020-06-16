@@ -13,6 +13,10 @@ public class Shape extends Tool implements Mouse {
     }
 
     public void mouseDrag(ArrayList<InfoTool> strokes, MouseEvent event) {
+        this.x2 = event.getX();
+        this.y2 = event.getY();
+
+        strokes.set(strokes.size()-1, addShape(x1, y1, x2, y2));
 
     }
 
@@ -23,14 +27,35 @@ public class Shape extends Tool implements Mouse {
     public void mouseDown(ArrayList<InfoTool> strokes, MouseEvent event) {
         this.x1 = this.x2 = event.getX();
         this.y1 = this.y2 = event.getY();
-        strokes.add(new InfoShape(x2, y2, x2, y2, Topbar.thicknessValue, fetchColor()));
+
+        strokes.add(addShape(x1, y1, x2, y2));
     }
 
     public Color fetchColor() {
         return Sidebar.currentColor;
     }
 
-    public InfoShape addShape() {
+    public InfoShape addShape(int x1, int y1, int x2, int y2) {
+        int width = Math.abs(x2-x1), height = Math.abs(y2-y1);
+        int newX = x1, newY = y1;
 
+
+        // Pointing southeast (default)
+
+        // Pointing southwest
+        if (x2 < x1 && y2 > y1) {
+            newX = x2;
+
+        // Pointing northeast
+        } if (x2 >= x1 && y2 <= y1) {
+            newY = y2;
+
+        // Pointing northwest
+        } if (x2 < x1 && y2 < y1) {
+            newX = x2;
+            newY = y2;
+        }
+        
+        return new InfoShape(newX, newY, width, height, Topbar.thicknessValue, Sidebar.currentColor);
     }
 }

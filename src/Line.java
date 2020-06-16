@@ -14,7 +14,6 @@ public class Line extends Tool implements Mouse {
     }
 
     public void mouseUp(ArrayList<InfoTool> strokes, MouseEvent event) {
-        // TODO Auto-generated method stub
 
     }
 

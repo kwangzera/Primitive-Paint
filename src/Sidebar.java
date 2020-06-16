@@ -85,6 +85,7 @@ public class Sidebar extends JPanel implements ActionListener {
 
         } if (e.getSource() == f) {
             currentToolID = 5;
+            Canvas.curr = Canvas.shape1;
             System.out.println("b5");
 
         } if (e.getSource() == g) {

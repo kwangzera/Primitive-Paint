@@ -18,10 +18,11 @@ public class InfoShape extends InfoTool {
         this.colour = colour;
     }
 
-    // public void draw(Graphics graphics) {
-    //     graphics.setColor(colour);
-    //     Graphics2D g2 = (Graphics2D) graphics;
-    //     g2.setStroke(new BasicStroke(brushWidth, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
+    public void draw(Graphics graphics) {
+        graphics.setColor(colour);
+        Graphics2D g2 = (Graphics2D) graphics;
+        g2.setStroke(new BasicStroke(brushWidth));
 
-    // }
+        graphics.drawRect(startX, startY, width, height);
+    }
 }
