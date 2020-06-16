@@ -38,7 +38,6 @@ public class Pen extends Tool implements Mouse {
         this.y1 = this.y2 = event.getY();
         strokes.add(new InfoPen(x2, y2, x2, y2, Topbar.thicknessValue, fetchColor()));
     }
-
     public Color fetchColor() {
         return Sidebar.currentColor;
     }

@@ -13,6 +13,7 @@ public class Canvas extends JPanel implements MouseMotionListener, MouseListener
 
     public static Mouse eraser = new Eraser();
     public static Mouse pen1 = new Pen();
+    public static Mouse line1 = new Line();
     public static Mouse curr = pen1;
     // public static Tool curr = new Tool();
     public Canvas() {

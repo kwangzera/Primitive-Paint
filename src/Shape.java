@@ -21,7 +21,16 @@ public class Shape extends Tool implements Mouse {
     }
 
     public void mouseDown(ArrayList<InfoTool> strokes, MouseEvent event) {
+        this.x1 = this.x2 = event.getX();
+        this.y1 = this.y2 = event.getY();
+        strokes.add(new InfoShape(x2, y2, x2, y2, Topbar.thicknessValue, fetchColor()));
+    }
+
+    public Color fetchColor() {
+        return Sidebar.currentColor;
+    }
+
+    public InfoShape addShape() {
 
     }
-    
 }

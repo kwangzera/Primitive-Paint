@@ -4,9 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 
 public class InfoPen extends InfoTool {
-    private int startX, startY, endX, endY;
-    private Color colour;
-	private int brushWidth;
+    protected int startX, startY, endX, endY;
+    protected Color colour;
+	protected int brushWidth;
     
     public InfoPen(int startX, int startY, int endX, int endY, int brushWidth, Color colour) {
         this.startX = startX;
