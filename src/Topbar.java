@@ -14,8 +14,10 @@ public class Topbar extends JPanel implements ActionListener, ChangeListener {
     private JSlider thickness;
     private JLabel putLogo;
     public static int thicknessValue = 10; //10 is defualt
-    JFileChooser fileChooser;
+    // JFileChooser fileChooser;
     private Help helpPanel;
+    FileChooser fileChooser;
+
     public Topbar() {
 
         // this.setPreferredSize(new Dimension(800, 0));
@@ -75,7 +77,7 @@ public class Topbar extends JPanel implements ActionListener, ChangeListener {
             }
 
         } if (e.getSource() == save) {
-            save(PaintApp.canvas);
+            fileChooser = new FileChooser(PaintApp.canvas);
 
         } if (e.getSource() == help) {
             helpPanel = new Help();
@@ -88,29 +90,5 @@ public class Topbar extends JPanel implements ActionListener, ChangeListener {
     public void stateChanged(ChangeEvent e) {
         // System.out.println(thickness.getValue());
         thicknessValue = thickness.getValue();
-    }
-
-
-    public void save(Canvas canvas) {
-        BufferedImage paintImage = new BufferedImage(canvas.getWidth(), canvas.getHeight(), BufferedImage.TYPE_INT_RGB);
-        canvas.paint(paintImage.getGraphics());
-        // repaint();
-        File userDir = new File(System.getProperty("user.dir"));
-
-        fileChooser = new JFileChooser(userDir);
-        fileChooser.setFileFilter(new FileNameExtensionFilter("*.png", "png"));
-
-        int saveVal = fileChooser.showSaveDialog(Main.paint);
-
-        if (saveVal == JFileChooser.APPROVE_OPTION) {
-            try {
-                File file = fileChooser.getSelectedFile();
-                file = new File(file.getAbsolutePath() + ".png");
-
-                ImageIO.write(paintImage, "png", file);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
     }
 }
