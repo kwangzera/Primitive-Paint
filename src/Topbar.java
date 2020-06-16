@@ -100,19 +100,14 @@ public class Topbar extends JPanel implements ActionListener, ChangeListener {
         fileChooser = new JFileChooser(userDir);
         fileChooser.setFileFilter(new FileNameExtensionFilter("*.png", "png"));
 
-        // fileChooser.setFileFilter(new PNGFileFilter());
         int saveVal = fileChooser.showSaveDialog(Main.paint);
-
-        File file = fileChooser.getSelectedFile();
-        String fileName = file.getAbsolutePath();
-
-        if (!fileName.endsWith(".png")) {
-            fileName += ".png";
-        }
-
+        fileChooser.setSelectedFile(new File("Untitled.png"));
         if (saveVal == JFileChooser.APPROVE_OPTION) {
             try {
-                ImageIO.write(paintImage, "png", new File(fileName));
+                File file = fileChooser.getSelectedFile();
+                file = new File(file.getAbsolutePath() + ".png");
+
+                ImageIO.write(paintImage, "png", file);
             } catch (IOException e) {
                 e.printStackTrace();
             }
