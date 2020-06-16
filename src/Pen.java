@@ -1,21 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 
-// public class Pen extends Tool {
-//     public Pen(Canvas canvas) {
-//         super(canvas);
-//     }
-
-//     public void draw(Graphics g) {
-//         g.setColor(Color.RED);
-//         // System.out.println(panel.getMouseX() + " " + panel.getMouseY());
-//         g.fillOval(canvas.getMouseX(), canvas.getMouseY(), 10, 10);
-// 		g.fillOval(100, 100, 10, 10);
-// 		// g.drawImage(MyPanel.paintImage, 0, 0, null);
-//     }
-// }
 
 public class Pen extends Tool implements Mouse {
     // private Pen pen1 = new Pen(this);
@@ -25,6 +11,7 @@ public class Pen extends Tool implements Mouse {
     public int x1 = -10, y1 = -10;
     public int x2 = -10, y2 = -10;
 
+    // not needed tbh but keeping it for now as reference
     public Pen() {
 
     }
@@ -50,10 +37,6 @@ public class Pen extends Tool implements Mouse {
         this.x1 = this.x2 = event.getX();
         this.y1 = this.y2 = event.getY();
         strokes.add(new InfoPen(x2, y2, x2, y2, Topbar.thicknessValue, fetchColor()));
-    }
-
-    public void test() {
-        System.out.println("success");
     }
 
     public Color fetchColor() {
