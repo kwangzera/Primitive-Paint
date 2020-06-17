@@ -3,7 +3,9 @@ import java.awt.event.*;
 import java.awt.*;
 
 public class Sidebar extends JPanel implements ActionListener {
-    private JButton a, b, c, d, ye, f, g, h;
+    private JButton pen, line, eraser, ovalE, ovalF, rectE, rectF, colour;
+    private JButton[] buttonList = {pen, line, eraser, ovalE, ovalF, rectE, rectF, colour};
+
     public static int currentToolID = 0;
     public static Color currentColor = Color.BLACK;
     public static boolean filled = false;
@@ -15,70 +17,53 @@ public class Sidebar extends JPanel implements ActionListener {
         this.setLayout(layout);
         this.setBorder(BorderFactory.createEmptyBorder(0, 8, 0, 8));
 
-        a = new JButton(new ImageIcon("assets/tools/penTool.png"));
-        b = new JButton(new ImageIcon("assets/tools/lineTool.png"));
-        c = new JButton(new ImageIcon("assets/tools/eraserTool.png"));
-        d = new JButton(new ImageIcon("assets/tools/ovalBorderTool.png"));
-        ye = new JButton(new ImageIcon("assets/tools/ovalFillTool.png"));
-        f = new JButton(new ImageIcon("assets/tools/rectBorderTool.png"));
-        g = new JButton(new ImageIcon("assets/tools/rectFillTool.png"));
-        h = new JButton(new ImageIcon("assets/tools/colourPicker.png"));
+        ImageIcon[] icons = {
+            new ImageIcon("assets/tools/penTool.png"),
+            new ImageIcon("assets/tools/lineTool.png"),
+            new ImageIcon("assets/tools/eraserTool.png"),
+            new ImageIcon("assets/tools/ovalBorderTool.png"),
+            new ImageIcon("assets/tools/ovalFillTool.png"),
+            new ImageIcon("assets/tools/rectBorderTool.png"),
+            new ImageIcon("assets/tools/rectFillTool.png"),
+            new ImageIcon("assets/tools/colourPicker.png")
+        };
 
-        a.addActionListener(this);
-        b.addActionListener(this);
-        c.addActionListener(this);
-        d.addActionListener(this);
-        ye.addActionListener(this);
-        f.addActionListener(this);
-        g.addActionListener(this);
-        h.addActionListener(this);
-
-        this.add(Box.createRigidArea(new Dimension(0, 8)));
-        this.add(a);
-        this.add(Box.createRigidArea(new Dimension(0, 8)));
-        this.add(b);
-        this.add(Box.createRigidArea(new Dimension(0, 8)));
-        this.add(c);
-        this.add(Box.createRigidArea(new Dimension(0, 8)));
-        this.add(d);
-        this.add(Box.createRigidArea(new Dimension(0, 8)));
-        this.add(ye);
-        this.add(Box.createRigidArea(new Dimension(0, 8)));
-        this.add(f);
-        this.add(Box.createRigidArea(new Dimension(0, 8)));
-        this.add(g);
-        this.add(Box.createRigidArea(new Dimension(0, 8)));
-        this.add(h);
+        for (int i = 0; i < 8; i++) {
+            this.add(Box.createRigidArea(new Dimension(0, 8)));
+            buttonList[i] = new JButton(icons[i]);
+            buttonList[i].addActionListener(this);
+            this.add(buttonList[i]);
+        }
     }
 
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == a) {
+        if (e.getSource() == buttonList[0])
             Canvas.curr = Canvas.pen1;
 
-        } if (e.getSource() == b) {
+        if (e.getSource() == buttonList[1])
             Canvas.curr = Canvas.line1;
 
-        } if (e.getSource() == c) {
+        if (e.getSource() == buttonList[2])
             Canvas.curr = Canvas.eraser;
 
-        } if (e.getSource() == d) {
+        if (e.getSource() == buttonList[3]) {
             filled = false;
             Canvas.curr = Canvas.oval1;
 
-        } if (e.getSource() == ye) {
+        } if (e.getSource() == buttonList[4]) {
             filled = true;
             Canvas.curr = Canvas.oval1;
 
-        } if (e.getSource() == f) {
+        } if (e.getSource() == buttonList[5]) {
             filled = false;
             Canvas.curr = Canvas.rect1;
 
-        } if (e.getSource() == g) {
+        } if (e.getSource() == buttonList[6]) {
             filled = true;
             Canvas.curr = Canvas.rect1;
 
         // Colour choose tool
-        } if (e.getSource() == h) {
+        } if (e.getSource() == buttonList[7]) {
             currentToolID = 7;
             currentColor = JColorChooser.showDialog(Main.paint, "Pick a Colour", Color.BLACK);
         }
