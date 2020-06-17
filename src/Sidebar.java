@@ -9,6 +9,7 @@ public class Sidebar extends JPanel implements ActionListener {
     private JButton a, b, c, d, ye, f, g, h, i;
     public static int currentToolID = 0;
     public static Color currentColor = Color.BLACK;
+    public static boolean filled = false;
 
     public Sidebar() {
         super();
@@ -65,32 +66,28 @@ public class Sidebar extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == a) {
             Canvas.curr = Canvas.pen1;
-            System.out.println("b0");
 
         } if (e.getSource() == b) {
             Canvas.curr = Canvas.line1;
-            System.out.println("b1");
 
         } if (e.getSource() == c) {
             Canvas.curr = Canvas.eraser;
-            System.out.println("b2");
 
         } if (e.getSource() == d) {
-            currentToolID = 3;
-            System.out.println("b3");
+            filled = false;
+            Canvas.curr = Canvas.oval1;
 
         } if (e.getSource() == ye) {
-            currentToolID = 4;
-            System.out.println("b4");
+            filled = true;
+            Canvas.curr = Canvas.oval1;
 
         } if (e.getSource() == f) {
-            currentToolID = 5;
-            Canvas.curr = Canvas.shape1;
-            System.out.println("b5");
+            filled = false;
+            Canvas.curr = Canvas.rect1;
 
         } if (e.getSource() == g) {
-            currentToolID = 6;
-            System.out.println("b6");
+            filled = true;
+            Canvas.curr = Canvas.rect1;
 
         // Colour choose tool
         } if (e.getSource() == h) {

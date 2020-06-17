@@ -14,13 +14,13 @@ public class Canvas extends JPanel implements MouseMotionListener, MouseListener
     public static Mouse eraser = new Eraser();
     public static Mouse pen1 = new Pen();
     public static Mouse line1 = new Line();
-    public static Mouse shape1 = new Shape();
+    public static Mouse rect1 = new Rectangle();
+    public static Mouse oval1 = new Oval();
+
     public static Mouse curr = pen1;
     
-    // public static Tool curr = new Tool();
     public Canvas() {
         this.setBackground(Color.WHITE);
-        // this.setPreferredSize(new Dimension(420, 420));
         this.addMouseMotionListener(this);
         this.addMouseListener(this);
         
@@ -34,14 +34,12 @@ public class Canvas extends JPanel implements MouseMotionListener, MouseListener
 
     public void mousePressed(MouseEvent e){
         this.curr.mouseDown(shapes, e);
-        System.out.println("click");
         System.out.println(shapes);
         this.repaint();
     }
 
     public void mouseReleased(MouseEvent e){
         this.curr.mouseUp(shapes, e);
-        System.out.println("unclicc");
         System.out.println(Sidebar.currentToolID);
         this.repaint();
     }
@@ -65,22 +63,9 @@ public class Canvas extends JPanel implements MouseMotionListener, MouseListener
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        // Graphics2D g2 = (Graphics2D) g;
-        // Graphics2D g2d = (Graphics2D) g;
-        // super.paintComponent(g2d);
-        // currentTool.draw(g2d);
-        // repaint();
-        // paint(g);
 
-        // g.setColor(Color.BLUE);
-        // g2.setStroke(new BasicStroke(Topbar.thicknessValue, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
-        // g2.setStroke(new BasicStroke(3));
         for (InfoTool i : shapes) {
-            // g2.setStroke(new BasicStroke(Topbar.thicknessValue, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
             i.draw(g);
         }
-        // gonna get slow when arraylist is fat and large
-        // if shapes;
-        // g.drawOval(0, 0, 400, 400);
     }
 }
