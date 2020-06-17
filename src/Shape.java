@@ -9,10 +9,6 @@ public class Shape extends Tool implements Mouse {
     protected int x2 = -10, y2 = -10;
     protected int width = 0, height = 0;
     protected int newX = 0, newY = 0;
-    
-    public Shape() {
-
-    }
 
     public void mouseDrag(ArrayList<InfoTool> strokes, MouseEvent event) {
         this.x2 = event.getX();
