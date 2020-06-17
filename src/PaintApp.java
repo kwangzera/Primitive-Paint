@@ -8,14 +8,15 @@ public class PaintApp extends JFrame {
     public PaintApp() {
         super("Primitive Paint");
 
+        // Adding each separate component into the main JFrame
         add(topbar, "North");
         add(sidebar, "West");
         add(canvas, "Center");
 
         this.setSize(800, 539);
+        this.setLocationRelativeTo(null);  // Center of the screen when opened
+        this.setResizable(false);  // Unresizable window
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        this.setLocationRelativeTo(null);
         this.setVisible(true);
-        this.setResizable(false);
     }
 }

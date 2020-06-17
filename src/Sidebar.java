@@ -13,8 +13,9 @@ public class Sidebar extends JPanel implements ActionListener {
     public Sidebar() {
         super();
 
-        BoxLayout layout = new BoxLayout(this, BoxLayout.Y_AXIS);
-        this.setLayout(layout);
+        // BoxLayout for vertically aligned items
+        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+
         this.setBorder(BorderFactory.createEmptyBorder(0, 8, 0, 8));
 
         ImageIcon[] icons = {
@@ -37,6 +38,7 @@ public class Sidebar extends JPanel implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
+        // Freehand and lines
         if (e.getSource() == buttonList[0])
             Canvas.curr = Canvas.pen1;
 
@@ -46,6 +48,7 @@ public class Sidebar extends JPanel implements ActionListener {
         if (e.getSource() == buttonList[2])
             Canvas.curr = Canvas.eraser;
 
+        // Shapes
         if (e.getSource() == buttonList[3]) {
             filled = false;
             Canvas.curr = Canvas.oval1;
@@ -62,7 +65,7 @@ public class Sidebar extends JPanel implements ActionListener {
             filled = true;
             Canvas.curr = Canvas.rect1;
 
-        // Colour choose tool
+        // Colour chooser
         } if (e.getSource() == buttonList[7]) {
             currentToolID = 7;
             currentColor = JColorChooser.showDialog(Main.paint, "Pick a Colour", Color.BLACK);
