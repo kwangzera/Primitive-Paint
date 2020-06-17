@@ -20,7 +20,4 @@ public class Line extends Tool {
         this.y1 = this.y2 = event.getY();
         strokes.add(new InfoPen(x1, y1, x2, y2, Topbar.thicknessValue, Sidebar.currentColor));
     }
-
-
-    
 }

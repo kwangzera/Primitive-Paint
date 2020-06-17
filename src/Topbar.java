@@ -7,31 +7,25 @@ public class Topbar extends JPanel implements ActionListener, ChangeListener {
     private JButton save, clear, help, info;
     private JSlider thickness;
     private JLabel putLogo;
-    public static int thicknessValue = 10; //10 is defualt
-    // JFileChooser fileChooser;
+    public static int thicknessValue = 10;
     private Help helpPanel;
-    FileChooser fileChooser;
+    private FileChooser fileChooser;
 
     public Topbar() {
-
-        // this.setPreferredSize(new Dimension(800, 0));
         super(new GridLayout());
-        // JPanel topSelect = new JPanel(new GridLayout());
+
         JPanel logo = new JPanel();
         JPanel chooseThickness = new JPanel();
         JPanel extras = new JPanel();
-        // d = new JDialog(d, "test title", true);
-
 
         chooseThickness.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Thickness in Pixels"));
-        // actions.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Actions"));
         extras.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Other Actions"));
 
         thickness = new JSlider(JSlider.HORIZONTAL, 0, 50, 10);
         thickness.setMinorTickSpacing(5);
         thickness.setMajorTickSpacing(50);
-        // thickness.setPaintTicks(true);
         thickness.setPaintLabels(true);
+
         putLogo = new JLabel(new ImageIcon("assets/topbar/logo.png"));
         save = new JButton();
         save.setIcon(new ImageIcon("assets/topbar/save.png"));
@@ -50,9 +44,7 @@ public class Topbar extends JPanel implements ActionListener, ChangeListener {
         this.add(logo);
         this.add(chooseThickness);
         this.add(extras);
-        // this.addMouseMotionListener(this);
-        // this.setLayout(new BorderLayout());
-        // this.add(this);
+
         clear.addActionListener(this);
         save.addActionListener(this);
         help.addActionListener(this);
@@ -82,7 +74,6 @@ public class Topbar extends JPanel implements ActionListener, ChangeListener {
     }
 
     public void stateChanged(ChangeEvent e) {
-        // System.out.println(thickness.getValue());
         thicknessValue = thickness.getValue();
     }
 }

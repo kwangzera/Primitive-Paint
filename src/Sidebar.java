@@ -10,10 +10,6 @@ public class Sidebar extends JPanel implements ActionListener {
 
     public Sidebar() {
         super();
-        // this
-        // JPanel this =new JPanel();
-
-        // this.setPreferredSize(new Dimension(0, 0));
 
         BoxLayout layout = new BoxLayout(this, BoxLayout.Y_AXIS);
         this.setLayout(layout);
@@ -27,8 +23,7 @@ public class Sidebar extends JPanel implements ActionListener {
         f = new JButton(new ImageIcon("assets/tools/rectBorderTool.png"));
         g = new JButton(new ImageIcon("assets/tools/rectFillTool.png"));
         h = new JButton(new ImageIcon("assets/tools/colourPicker.png"));
-        // i = new JButton(new ImageIcon("assets/tools/colourPickerBG.png"));
-        // i = new JButton(ph);
+
         a.addActionListener(this);
         b.addActionListener(this);
         c.addActionListener(this);
@@ -54,10 +49,6 @@ public class Sidebar extends JPanel implements ActionListener {
         this.add(g);
         this.add(Box.createRigidArea(new Dimension(0, 8)));
         this.add(h);
-        // this.add(Box.createRigidArea(new Dimension(0, 8)));
-        // this.add(i);
-
-        // this.add(this);
     }
 
     public void actionPerformed(ActionEvent e) {

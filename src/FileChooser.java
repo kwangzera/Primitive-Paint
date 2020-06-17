@@ -1,5 +1,4 @@
 import javax.swing.*;
-// import javafx.beans.value.ChangeListener;
 import javax.swing.filechooser.*;
 import java.io.*;
 import java.awt.image.*;
