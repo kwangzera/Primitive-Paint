@@ -1,8 +1,3 @@
-// import java.awt.event.MouseEvent;
-// import java.util.ArrayList;
-
-import java.awt.*;
-import javax.swing.*;
 import java.awt.event.*;
 
 public class CreateTool implements MouseMotionListener, MouseListener {

@@ -1,5 +1,4 @@
 import java.awt.event.MouseEvent;
-import java.util.ArrayList;
 
 public class CreateLine extends CreateTool {
     public int x1 = -10, y1 = -10;

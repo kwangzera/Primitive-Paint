@@ -1,6 +1,5 @@
 import java.awt.*;
 import java.awt.event.MouseEvent;
-import java.util.ArrayList;
 
 public class CreateShape extends CreateTool {
     protected int x1 = -10, y1 = -10;

@@ -1,7 +1,5 @@
 import java.awt.*;
 import java.awt.event.*;
-import java.util.ArrayList;
-
 
 public class CreatePen extends CreateTool {
     public int x1 = -10, y1 = -10;
