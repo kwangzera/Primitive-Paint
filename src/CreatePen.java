@@ -27,6 +27,8 @@ public class CreatePen extends CreateTool {
         this.y1 = this.y2 = event.getY();
         PanelCanvas.shapes.add(new DrawPen(x2, y2, x2, y2, PanelTopbar.thicknessValue, fetchColor()));
     }
+
+    // Separate method created to set a temporary colour (used in CreateEraser.java)
     public Color fetchColor() {
         return PanelSidebar.currentColor;
     }

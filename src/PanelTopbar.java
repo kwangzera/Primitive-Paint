@@ -59,11 +59,11 @@ public class PanelTopbar extends JPanel implements ActionListener, ChangeListene
             
             if (JOptionPane.YES_OPTION == result) {
                 PanelCanvas.shapes.clear();
-                FramePaintApp.canvas.repaint();
+                PaintApp.canvas.repaint();
             }
 
         } if (e.getSource() == save) {
-            fileChooser = new PopupFileChooser(FramePaintApp.canvas);
+            fileChooser = new PopupFileChooser(PaintApp.canvas);
 
         } if (e.getSource() == help) {
             helpPanel = new PopupHelp();

@@ -3,7 +3,6 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 public class DrawRect extends DrawShape {
-
     public DrawRect(int startX, int startY, int width, int height, int brushWidth, Color colour, Boolean filled) {
         super(startX, startY, width, height, brushWidth, colour, filled);
     }

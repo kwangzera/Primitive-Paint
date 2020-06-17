@@ -1,5 +1,5 @@
 import java.awt.*;
 
-public interface PaintCanvas {
+public interface Painter {
     void draw(Graphics graphics);
 }

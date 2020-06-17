@@ -40,10 +40,10 @@ public class PanelSidebar extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         // Freehand and lines
         if (e.getSource() == buttonList[0])
-            PanelCanvas.curr = PanelCanvas.pen1;
+            PanelCanvas.curr = PanelCanvas.pen;
 
         if (e.getSource() == buttonList[1])
-            PanelCanvas.curr = PanelCanvas.line1;
+            PanelCanvas.curr = PanelCanvas.line;
 
         if (e.getSource() == buttonList[2])
             PanelCanvas.curr = PanelCanvas.eraser;
@@ -51,19 +51,19 @@ public class PanelSidebar extends JPanel implements ActionListener {
         // Shapes
         if (e.getSource() == buttonList[3]) {
             filled = false;
-            PanelCanvas.curr = PanelCanvas.oval1;
+            PanelCanvas.curr = PanelCanvas.oval;
 
         } if (e.getSource() == buttonList[4]) {
             filled = true;
-            PanelCanvas.curr = PanelCanvas.oval1;
+            PanelCanvas.curr = PanelCanvas.oval;
 
         } if (e.getSource() == buttonList[5]) {
             filled = false;
-            PanelCanvas.curr = PanelCanvas.rect1;
+            PanelCanvas.curr = PanelCanvas.rect;
 
         } if (e.getSource() == buttonList[6]) {
             filled = true;
-            PanelCanvas.curr = PanelCanvas.rect1;
+            PanelCanvas.curr = PanelCanvas.rect;
 
         // Colour chooser
         } if (e.getSource() == buttonList[7]) {

@@ -7,12 +7,13 @@ public class PanelCanvas extends JPanel implements MouseMotionListener, MouseLis
     public static ArrayList<DrawTool> shapes = new ArrayList<>();
 
     public static CreateTool eraser = new CreateEraser();
-    public static CreateTool pen1 = new CreatePen();
-    public static CreateTool line1 = new CreateLine();
-    public static CreateTool rect1 = new CreateRect();
-    public static CreateTool oval1 = new CreateOval();
+    public static CreateTool pen = new CreatePen();
+    public static CreateTool line = new CreateLine();
+    public static CreateTool rect = new CreateRect();
+    public static CreateTool oval = new CreateOval();
 
-    public static CreateTool curr = pen1;
+    // Set the default tool to pen
+    public static CreateTool curr = pen;
     
     public PanelCanvas() {
         this.setBackground(Color.WHITE);
@@ -20,16 +21,19 @@ public class PanelCanvas extends JPanel implements MouseMotionListener, MouseLis
         this.addMouseListener(this);
     }
 
+    // Calls the mouseDragged method in the current tool
     public void mouseDragged(MouseEvent e) {
         this.curr.mouseDragged(e);
         this.repaint();
     }
 
+    // Calls the mousePressed method in the current tool
     public void mousePressed(MouseEvent e){
         this.curr.mousePressed(e);
         this.repaint();
     }
 
+    // Calls the mouseReleased method in the current tool
     public void mouseReleased(MouseEvent e){
         this.curr.mouseReleased(e);
         this.repaint();
@@ -54,6 +58,7 @@ public class PanelCanvas extends JPanel implements MouseMotionListener, MouseLis
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
+        // Loops through the ArrayList of and draws them
         for (DrawTool i : shapes) {
             i.draw(g);
         }
