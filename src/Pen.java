@@ -4,17 +4,8 @@ import java.util.ArrayList;
 
 
 public class Pen extends Tool implements Mouse {
-    // private Pen pen1 = new Pen(this);
-    // private Eraser eraser1 = new Eraser(this);
-    // private Tool currentTool = pen1;
-    // protected Color currColour;
     public int x1 = -10, y1 = -10;
     public int x2 = -10, y2 = -10;
-
-    // not needed tbh but keeping it for now as reference
-    public Pen() {
-
-    }
 
     public void mouseDrag(ArrayList<InfoTool> strokes, MouseEvent event) {
         this.x2 = event.getX();

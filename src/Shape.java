@@ -43,8 +43,6 @@ public class Shape extends Tool implements Mouse {
         newX = x1;
         newY = y1;
 
-        // Pointing southeast (default)
-
         // Pointing southwest
         if (x2 < x1 && y2 > y1) {
             newX = x2;

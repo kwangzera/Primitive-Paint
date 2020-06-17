@@ -8,8 +8,6 @@ public class Line extends Tool implements Mouse {
     public void mouseDrag(ArrayList<InfoTool> strokes, MouseEvent event) {
         this.x2 = event.getX();
         this.y2 = event.getY();
-        // x1 = x2;
-        // y1 = y2;
         strokes.set(strokes.size()-1, new InfoPen(x1, y1, x2, y2, Topbar.thicknessValue, Sidebar.currentColor));
     }
 

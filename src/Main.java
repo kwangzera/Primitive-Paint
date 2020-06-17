@@ -5,7 +5,6 @@ Final Project: Paint Application
 ICS3U7-02, Ms. Strelkovska
 */
 
-// run with bat
 // DONT FORGET TO CREATE A DEMONSTRATION VIDEO
 public class Main {
     public static PaintApp paint;

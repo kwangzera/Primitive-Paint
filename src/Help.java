@@ -13,8 +13,6 @@ public class Help {
 
     private JLabel[] helpArr = {penHelp, eraserHelp, lineHelp, ovalHelp, rectHelp, colourHelp, saveHelp, clearHelp};
     private String[] headers = {"Pen", "Line", "Eraser", "Oval", "Rectangle", "Colour Picker", "File Chooser", "Clear Screen"};
-    // private JLabel newPageHelp = new JLabel("Description for pen");
-    // private JLabel thicknessHelp = new JLabel("Description for pen");
 
     public Help() {
         JTabbedPane tp = new JTabbedPane();

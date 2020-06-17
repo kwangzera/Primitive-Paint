@@ -14,7 +14,7 @@ public class FileChooser {
 
         BufferedImage paintImage = new BufferedImage(canvas.getWidth(), canvas.getHeight(), BufferedImage.TYPE_INT_RGB);
         canvas.paint(paintImage.getGraphics());
-        // repaint();
+
         File userDir = new File(System.getProperty("user.dir"));
 
         fileChooser = new JFileChooser(userDir);
