@@ -2,7 +2,7 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.awt.*;
 
-public class Shape extends Tool implements Mouse {
+public class Shape extends Tool {
     protected int x1 = -10, y1 = -10;
     protected int x2 = -10, y2 = -10;
     protected int width = 0, height = 0;
@@ -24,7 +24,8 @@ public class Shape extends Tool implements Mouse {
         this.x1 = this.x2 = event.getX();
         this.y1 = this.y2 = event.getY();
 
-        strokes.add(addShape());
+        // Adding a placeholder value
+        strokes.add(new InfoTool());
     }
 
     public Color fetchColor() {
@@ -48,11 +49,11 @@ public class Shape extends Tool implements Mouse {
             newX = x2;
 
         // Pointing northeast
-        } if (x2 >= x1 && y2 <= y1) {
+        } if (x2 > x1 && y2 < y1) {
             newY = y2;
 
         // Pointing northwest
-        } if (x2 < x1 && y2 < y1) {
+        } if (x2 <= x1 && y2 <= y1) {
             newX = x2;
             newY = y2;
         }
