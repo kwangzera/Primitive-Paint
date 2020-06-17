@@ -3,7 +3,7 @@ import java.awt.event.*;
 import java.util.ArrayList;
 
 
-public class Pen extends Tool implements Mouse {
+public class Pen extends Tool {
     public int x1 = -10, y1 = -10;
     public int x2 = -10, y2 = -10;
 

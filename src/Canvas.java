@@ -6,13 +6,13 @@ import java.util.*;
 public class Canvas extends JPanel implements MouseMotionListener, MouseListener {
     public static ArrayList<InfoTool> shapes = new ArrayList<>();
 
-    public static Mouse eraser = new Eraser();
-    public static Mouse pen1 = new Pen();
-    public static Mouse line1 = new Line();
-    public static Mouse rect1 = new Rectangle();
-    public static Mouse oval1 = new Oval();
+    public static Tool eraser = new Eraser();
+    public static Tool pen1 = new Pen();
+    public static Tool line1 = new Line();
+    public static Tool rect1 = new Rectangle();
+    public static Tool oval1 = new Oval();
 
-    public static Mouse curr = pen1;
+    public static Tool curr = pen1;
     
     public Canvas() {
         this.setBackground(Color.WHITE);
