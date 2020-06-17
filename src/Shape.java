@@ -8,24 +8,24 @@ public class Shape extends Tool {
     protected int width = 0, height = 0;
     protected int newX = 0, newY = 0;
 
-    public void mouseDrag(ArrayList<InfoTool> strokes, MouseEvent event) {
+    public void mouseDragged(MouseEvent event) {
         this.x2 = event.getX();
         this.y2 = event.getY();
 
-        strokes.set(strokes.size()-1, addShape());
+        Canvas.shapes.set(Canvas.shapes.size()-1, addShape());
 
     }
 
-    public void mouseUp(ArrayList<InfoTool> strokes, MouseEvent event) {
-
-    }
-
-    public void mouseDown(ArrayList<InfoTool> strokes, MouseEvent event) {
+    public void mousePressed(MouseEvent event) {
         this.x1 = this.x2 = event.getX();
         this.y1 = this.y2 = event.getY();
 
         // Adding a placeholder value
-        strokes.add(new InfoTool());
+        Canvas.shapes.add(new InfoTool());
+    }
+
+    public void mouseReleased(MouseEvent event) {
+
     }
 
     public Color fetchColor() {

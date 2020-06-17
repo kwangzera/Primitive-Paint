@@ -21,17 +21,17 @@ public class Canvas extends JPanel implements MouseMotionListener, MouseListener
     }
 
     public void mouseDragged(MouseEvent e) {
-        this.curr.mouseDrag(shapes, e);
+        this.curr.mouseDragged(e);
         this.repaint();
     }
 
     public void mousePressed(MouseEvent e){
-        this.curr.mouseDown(shapes, e);
+        this.curr.mousePressed(e);
         this.repaint();
     }
 
     public void mouseReleased(MouseEvent e){
-        this.curr.mouseUp(shapes, e);
+        this.curr.mouseReleased(e);
         this.repaint();
     }
 
