@@ -1,7 +1,4 @@
-*.class
 *.zip
-*.txt
-simplified/
 bin/
 run.bat
 app/

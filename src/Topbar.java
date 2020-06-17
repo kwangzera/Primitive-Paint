@@ -1,7 +1,7 @@
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.event.*;
-import java.awt.event.*;
 
 public class Topbar extends JPanel implements ActionListener, ChangeListener {
     private JButton save, clear, help, info;

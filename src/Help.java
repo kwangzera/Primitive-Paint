@@ -1,5 +1,5 @@
-import javax.swing.*;
 import java.awt.*;
+import javax.swing.*;
 
 public class Help {
     private JLabel penHelp = new JLabel("Pen Tool", JLabel.LEFT);

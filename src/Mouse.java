@@ -1,5 +1,5 @@
-import java.util.ArrayList;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 public interface Mouse {
     void mouseDrag(ArrayList<InfoTool> strokes, MouseEvent event);

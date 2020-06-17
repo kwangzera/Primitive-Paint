@@ -1,5 +1,6 @@
-import java.awt.Graphics;
 import java.awt.*;
+import java.awt.Graphics;
+
 
 public class InfoPen extends InfoTool {
     protected int startX, startY, endX, endY;

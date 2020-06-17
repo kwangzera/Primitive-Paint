@@ -1,6 +1,6 @@
 import java.awt.*;
-import javax.swing.*;
 import java.awt.event.*;
+import javax.swing.*;
 import java.util.*;
 
 public class Canvas extends JPanel implements MouseMotionListener, MouseListener {
@@ -18,24 +18,20 @@ public class Canvas extends JPanel implements MouseMotionListener, MouseListener
         this.setBackground(Color.WHITE);
         this.addMouseMotionListener(this);
         this.addMouseListener(this);
-        
     }
 
     public void mouseDragged(MouseEvent e) {
-        System.out.println(Sidebar.currentToolID);
         this.curr.mouseDrag(shapes, e);
         this.repaint();
     }
 
     public void mousePressed(MouseEvent e){
         this.curr.mouseDown(shapes, e);
-        System.out.println(shapes);
         this.repaint();
     }
 
     public void mouseReleased(MouseEvent e){
         this.curr.mouseUp(shapes, e);
-        System.out.println(Sidebar.currentToolID);
         this.repaint();
     }
 

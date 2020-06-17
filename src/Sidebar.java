@@ -1,6 +1,6 @@
-import javax.swing.*;
-import java.awt.event.*;
 import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
 public class Sidebar extends JPanel implements ActionListener {
     private JButton pen, line, eraser, ovalE, ovalF, rectE, rectF, colour;

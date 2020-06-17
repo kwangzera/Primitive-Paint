@@ -1,8 +1,8 @@
-import javax.swing.*;
-import javax.swing.filechooser.*;
-import java.io.*;
 import java.awt.image.*;
 import javax.imageio.ImageIO;
+import java.io.*;
+import javax.swing.*;
+import javax.swing.filechooser.*;
 
 public class FileChooser {
     private Canvas canvas;
