@@ -1,11 +1,11 @@
 import javax.swing.*;
 
-public class PaintApp extends JFrame {
-    public static Canvas canvas = new Canvas();
-    public static Sidebar sidebar = new Sidebar();
-    public static Topbar topbar = new Topbar();
+public class FramePaintApp extends JFrame {
+    public static PanelCanvas canvas = new PanelCanvas();
+    public static PanelSidebar sidebar = new PanelSidebar();
+    public static PanelTopbar topbar = new PanelTopbar();
 
-    public PaintApp() {
+    public FramePaintApp() {
         super("Primitive Paint");
 
         // Adding each separate component into the main JFrame

@@ -7,9 +7,9 @@ ICS3U7-02, Ms. Strelkovska
 
 // DONT FORGET TO CREATE A DEMONSTRATION VIDEO
 public class Main {
-    public static PaintApp paint;
+    public static FramePaintApp paint;
 
     public static void main(String[] args) {
-        paint = new PaintApp();
+        paint = new FramePaintApp();
     }
 }

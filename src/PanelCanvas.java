@@ -3,18 +3,18 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.util.*;
 
-public class Canvas extends JPanel implements MouseMotionListener, MouseListener {
-    public static ArrayList<InfoTool> shapes = new ArrayList<>();
+public class PanelCanvas extends JPanel implements MouseMotionListener, MouseListener {
+    public static ArrayList<DrawTool> shapes = new ArrayList<>();
 
-    public static Tool eraser = new Eraser();
-    public static Tool pen1 = new Pen();
-    public static Tool line1 = new Line();
-    public static Tool rect1 = new Rectangle();
-    public static Tool oval1 = new Oval();
+    public static CreateTool eraser = new CreateEraser();
+    public static CreateTool pen1 = new CreatePen();
+    public static CreateTool line1 = new CreateLine();
+    public static CreateTool rect1 = new CreateRect();
+    public static CreateTool oval1 = new CreateOval();
 
-    public static Tool curr = pen1;
+    public static CreateTool curr = pen1;
     
-    public Canvas() {
+    public PanelCanvas() {
         this.setBackground(Color.WHITE);
         this.addMouseMotionListener(this);
         this.addMouseListener(this);
@@ -54,7 +54,7 @@ public class Canvas extends JPanel implements MouseMotionListener, MouseListener
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        for (InfoTool i : shapes) {
+        for (DrawTool i : shapes) {
             i.draw(g);
         }
     }

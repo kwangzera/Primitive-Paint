@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class InfoTool implements PaintCanvas {
+public class DrawTool implements PaintCanvas {
     public void draw(Graphics graphics) {
 
     }

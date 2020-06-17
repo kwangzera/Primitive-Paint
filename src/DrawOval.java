@@ -2,9 +2,9 @@ import java.awt.*;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class InfoOval extends InfoShape {
+public class DrawOval extends DrawShape {
 
-    public InfoOval(int startX, int startY, int width, int height, int brushWidth, Color colour, Boolean filled) {
+    public DrawOval(int startX, int startY, int width, int height, int brushWidth, Color colour, Boolean filled) {
         super(startX, startY, width, height, brushWidth, colour, filled);
 
     }

@@ -2,7 +2,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class Sidebar extends JPanel implements ActionListener {
+public class PanelSidebar extends JPanel implements ActionListener {
     private JButton pen, line, eraser, ovalE, ovalF, rectE, rectF, colour;
     private JButton[] buttonList = {pen, line, eraser, ovalE, ovalF, rectE, rectF, colour};
 
@@ -10,7 +10,7 @@ public class Sidebar extends JPanel implements ActionListener {
     public static Color currentColor = Color.BLACK;
     public static boolean filled = false;
 
-    public Sidebar() {
+    public PanelSidebar() {
         super();
 
         // BoxLayout for vertically aligned items
@@ -40,30 +40,30 @@ public class Sidebar extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         // Freehand and lines
         if (e.getSource() == buttonList[0])
-            Canvas.curr = Canvas.pen1;
+            PanelCanvas.curr = PanelCanvas.pen1;
 
         if (e.getSource() == buttonList[1])
-            Canvas.curr = Canvas.line1;
+            PanelCanvas.curr = PanelCanvas.line1;
 
         if (e.getSource() == buttonList[2])
-            Canvas.curr = Canvas.eraser;
+            PanelCanvas.curr = PanelCanvas.eraser;
 
         // Shapes
         if (e.getSource() == buttonList[3]) {
             filled = false;
-            Canvas.curr = Canvas.oval1;
+            PanelCanvas.curr = PanelCanvas.oval1;
 
         } if (e.getSource() == buttonList[4]) {
             filled = true;
-            Canvas.curr = Canvas.oval1;
+            PanelCanvas.curr = PanelCanvas.oval1;
 
         } if (e.getSource() == buttonList[5]) {
             filled = false;
-            Canvas.curr = Canvas.rect1;
+            PanelCanvas.curr = PanelCanvas.rect1;
 
         } if (e.getSource() == buttonList[6]) {
             filled = true;
-            Canvas.curr = Canvas.rect1;
+            PanelCanvas.curr = PanelCanvas.rect1;
 
         // Colour chooser
         } if (e.getSource() == buttonList[7]) {

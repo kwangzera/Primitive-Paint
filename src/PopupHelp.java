@@ -1,7 +1,7 @@
 import java.awt.*;
 import javax.swing.*;
 
-public class Help {
+public class PopupHelp {
     private JLabel penHelp = new JLabel("Pen Tool", JLabel.LEFT);
     private JLabel eraserHelp = new JLabel("Eraser Tool", SwingConstants.LEFT);
     private JLabel lineHelp = new JLabel("Line Tool", SwingConstants.LEFT);
@@ -14,7 +14,7 @@ public class Help {
     private JLabel[] helpArr = {penHelp, eraserHelp, lineHelp, ovalHelp, rectHelp, colourHelp, saveHelp, clearHelp};
     private String[] headers = {"Pen", "Line", "Eraser", "Oval", "Rectangle", "Colour Picker", "File Chooser", "Clear Screen"};
 
-    public Help() {
+    public PopupHelp() {
         JTabbedPane tp = new JTabbedPane();
 
         for (int i = 0; i < 8; i++) {

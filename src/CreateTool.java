@@ -5,7 +5,7 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
-public class Tool implements MouseMotionListener, MouseListener {
+public class CreateTool implements MouseMotionListener, MouseListener {
     public void mouseDragged(MouseEvent e) {
 
     }

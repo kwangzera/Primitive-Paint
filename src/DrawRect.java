@@ -2,9 +2,9 @@ import java.awt.*;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class InfoRect extends InfoShape {
+public class DrawRect extends DrawShape {
 
-    public InfoRect(int startX, int startY, int width, int height, int brushWidth, Color colour, Boolean filled) {
+    public DrawRect(int startX, int startY, int width, int height, int brushWidth, Color colour, Boolean filled) {
         super(startX, startY, width, height, brushWidth, colour, filled);
     }
 

@@ -2,7 +2,7 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
-public class Shape extends Tool {
+public class CreateShape extends CreateTool {
     protected int x1 = -10, y1 = -10;
     protected int x2 = -10, y2 = -10;
     protected int width = 0, height = 0;
@@ -12,7 +12,7 @@ public class Shape extends Tool {
         this.x2 = event.getX();
         this.y2 = event.getY();
 
-        Canvas.shapes.set(Canvas.shapes.size()-1, addShape());
+        PanelCanvas.shapes.set(PanelCanvas.shapes.size()-1, addShape());
 
     }
 
@@ -21,7 +21,7 @@ public class Shape extends Tool {
         this.y1 = this.y2 = event.getY();
 
         // Adding a placeholder value
-        Canvas.shapes.add(new InfoTool());
+        PanelCanvas.shapes.add(new DrawTool());
     }
 
     public void mouseReleased(MouseEvent event) {
@@ -29,12 +29,12 @@ public class Shape extends Tool {
     }
 
     public Color fetchColor() {
-        return Sidebar.currentColor;
+        return PanelSidebar.currentColor;
     }
 
-    public InfoShape addShape() {
+    public DrawShape addShape() {
         alignDrag();
-        return new InfoShape(newX, newY, width, height, Topbar.thicknessValue, Sidebar.currentColor, Sidebar.filled);
+        return new DrawShape(newX, newY, width, height, PanelTopbar.thicknessValue, PanelSidebar.currentColor, PanelSidebar.filled);
 
     }
 

@@ -1,7 +1,7 @@
 import java.awt.*;
 
-public class Eraser extends Pen {
-    public Eraser() {
+public class CreateEraser extends CreatePen {
+    public CreateEraser() {
         super();
     }
 

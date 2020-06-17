@@ -3,15 +3,15 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.event.*;
 
-public class Topbar extends JPanel implements ActionListener, ChangeListener {
+public class PanelTopbar extends JPanel implements ActionListener, ChangeListener {
     private JButton save, clear, help, info;
     private JSlider thickness;
     private JLabel putLogo;
     public static int thicknessValue = 10;
-    private Help helpPanel;
-    private FileChooser fileChooser;
+    private PopupHelp helpPanel;
+    private PopupFileChooser fileChooser;
 
-    public Topbar() {
+    public PanelTopbar() {
         super(new GridLayout());
 
         JPanel logo = new JPanel();
@@ -58,15 +58,15 @@ public class Topbar extends JPanel implements ActionListener, ChangeListener {
             int result = JOptionPane.showConfirmDialog(Main.paint, "Clear current screen contents?","Clear Screen", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
             
             if (JOptionPane.YES_OPTION == result) {
-                Canvas.shapes.clear();
-                PaintApp.canvas.repaint();
+                PanelCanvas.shapes.clear();
+                FramePaintApp.canvas.repaint();
             }
 
         } if (e.getSource() == save) {
-            fileChooser = new FileChooser(PaintApp.canvas);
+            fileChooser = new PopupFileChooser(FramePaintApp.canvas);
 
         } if (e.getSource() == help) {
-            helpPanel = new Help();
+            helpPanel = new PopupHelp();
 
         } if (e.getSource() == info) {
             JOptionPane.showMessageDialog(Main.paint, "Version 1.0.0", "Info", JOptionPane.INFORMATION_MESSAGE);

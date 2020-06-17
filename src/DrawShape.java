@@ -1,12 +1,12 @@
 import java.awt.*;
 
-public class InfoShape extends InfoTool {
+public class DrawShape extends DrawTool {
     protected int startX, startY, width, height;
     protected Color colour;
     protected int brushWidth;
     protected boolean filled;
     
-    public InfoShape(int startX, int startY, int width, int height, int brushWidth, Color colour, Boolean filled) {
+    public DrawShape(int startX, int startY, int width, int height, int brushWidth, Color colour, Boolean filled) {
         this.startX = startX;
         this.startY = startY;
         this.width = width;

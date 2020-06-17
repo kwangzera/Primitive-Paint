@@ -3,14 +3,14 @@ import java.awt.event.*;
 import java.util.ArrayList;
 
 
-public class Pen extends Tool {
+public class CreatePen extends CreateTool {
     public int x1 = -10, y1 = -10;
     public int x2 = -10, y2 = -10;
 
     public void mouseDragged(MouseEvent event) {
         this.x2 = event.getX();
         this.y2 = event.getY();
-        Canvas.shapes.add(new InfoPen(x1, y1, x2, y2, Topbar.thicknessValue, fetchColor()));
+        PanelCanvas.shapes.add(new DrawPen(x1, y1, x2, y2, PanelTopbar.thicknessValue, fetchColor()));
         x1 = x2;
         y1 = y2;
         System.out.println(x2 + ", " + y2);
@@ -21,15 +21,15 @@ public class Pen extends Tool {
         this.y2 = event.getY();
         x1 = x2;
         y1 = y2;
-        Canvas.shapes.add(new InfoPen(x2, y2, x2, y2, Topbar.thicknessValue, fetchColor()));
+        PanelCanvas.shapes.add(new DrawPen(x2, y2, x2, y2, PanelTopbar.thicknessValue, fetchColor()));
     }
 
     public void mouseReleased(MouseEvent event) {
         this.x1 = this.x2 = event.getX();
         this.y1 = this.y2 = event.getY();
-        Canvas.shapes.add(new InfoPen(x2, y2, x2, y2, Topbar.thicknessValue, fetchColor()));
+        PanelCanvas.shapes.add(new DrawPen(x2, y2, x2, y2, PanelTopbar.thicknessValue, fetchColor()));
     }
     public Color fetchColor() {
-        return Sidebar.currentColor;
+        return PanelSidebar.currentColor;
     }
 }

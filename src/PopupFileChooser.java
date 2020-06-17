@@ -4,11 +4,11 @@ import java.io.*;
 import javax.swing.*;
 import javax.swing.filechooser.*;
 
-public class FileChooser {
-    private Canvas canvas;
+public class PopupFileChooser {
+    private PanelCanvas canvas;
     private JFileChooser fileChooser;
     
-    public FileChooser(Canvas canvas) {
+    public PopupFileChooser(PanelCanvas canvas) {
         this.canvas = canvas;
 
         BufferedImage paintImage = new BufferedImage(canvas.getWidth(), canvas.getHeight(), BufferedImage.TYPE_INT_RGB);
