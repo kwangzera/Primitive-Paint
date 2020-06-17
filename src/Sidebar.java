@@ -1,12 +1,9 @@
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
-import java.awt.image.*;
-import javax.imageio.ImageIO;
-import java.io.*;
 
 public class Sidebar extends JPanel implements ActionListener {
-    private JButton a, b, c, d, ye, f, g, h, i;
+    private JButton a, b, c, d, ye, f, g, h;
     public static int currentToolID = 0;
     public static Color currentColor = Color.BLACK;
     public static boolean filled = false;

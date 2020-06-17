@@ -4,12 +4,7 @@ import java.awt.event.*;
 import java.util.*;
 
 public class Canvas extends JPanel implements MouseMotionListener, MouseListener {
-    // public static int[] temp = new int[6];
     public static ArrayList<InfoTool> shapes = new ArrayList<>();
-    // private Pen pen1 = new Pen(this);
-    // private Eraser eraser1 = new Eraser(this);
-    // private Tool currentTool = pen1;
-    private static int x = -10, y = -10;
 
     public static Mouse eraser = new Eraser();
     public static Mouse pen1 = new Pen();
@@ -49,8 +44,7 @@ public class Canvas extends JPanel implements MouseMotionListener, MouseListener
     }
 
     public void mouseClicked(MouseEvent e){
-        // flag = true;
-        // System.out.println("click2");
+
     }
 
     public void mouseEntered(MouseEvent e){

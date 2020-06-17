@@ -1,8 +1,6 @@
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.awt.*;
-import java.awt.event.*;
-import java.util.ArrayList;
 
 public class Shape extends Tool implements Mouse {
     protected int x1 = -10, y1 = -10;

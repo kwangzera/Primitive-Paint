@@ -1,13 +1,7 @@
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.event.*;
-// import javafx.beans.value.ChangeListener;
-import javax.swing.filechooser.*;
 import java.awt.event.*;
-import java.io.*;
-import java.awt.image.*;
-import javax.imageio.ImageIO;
-
 
 public class Topbar extends JPanel implements ActionListener, ChangeListener {
     private JButton save, clear, help, info;
