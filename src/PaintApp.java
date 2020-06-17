@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
 
 public class PaintApp extends JFrame {
     public static Canvas canvas = new Canvas();
@@ -14,7 +13,6 @@ public class PaintApp extends JFrame {
         add(canvas, "Center");
 
         this.setSize(800, 539);
-        this.setIconImage(Toolkit.getDefaultToolkit().getImage("assets/appIcon.png"));
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.setVisible(true);
