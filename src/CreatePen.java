@@ -11,7 +11,6 @@ public class CreatePen extends CreateTool {
         PanelCanvas.shapes.add(new DrawPen(x1, y1, x2, y2, PanelTopbar.thicknessValue, fetchColor()));
         x1 = x2;
         y1 = y2;
-        System.out.println(x2 + ", " + y2);
     }
     
     public void mousePressed(MouseEvent event) {
