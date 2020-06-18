@@ -22,7 +22,7 @@ public class PanelTopbar extends JPanel implements ActionListener, ChangeListene
         chooseThickness.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Line Thickness"));
         extras.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Other Actions"));
 
-        thickness = new JSlider(JSlider.HORIZONTAL, 1, 30, 10);
+        thickness = new JSlider(JSlider.HORIZONTAL, 0, 25, 10);
         putLogo = new JLabel(new ImageIcon("assets/topbar/logo.png"));
         save = new JButton();
         save.setIcon(new ImageIcon("assets/topbar/save.png"));
