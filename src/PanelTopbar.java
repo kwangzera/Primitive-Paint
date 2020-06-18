@@ -10,6 +10,7 @@ public class PanelTopbar extends JPanel implements ActionListener, ChangeListene
     public static int thicknessValue = 10;
     private PopupHelp helpPanel;
     private PopupFileChooser fileChooser;
+    public static PanelPreview preview;
 
     public PanelTopbar() {
         super(new GridLayout());
@@ -18,21 +19,20 @@ public class PanelTopbar extends JPanel implements ActionListener, ChangeListene
         JPanel chooseThickness = new JPanel();
         JPanel extras = new JPanel();
 
-        chooseThickness.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Thickness in Pixels"));
+        chooseThickness.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Line Thickness"));
         extras.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Other Actions"));
 
-        thickness = new JSlider(JSlider.HORIZONTAL, 0, 50, 10);
-        thickness.setMinorTickSpacing(5);
-        thickness.setMajorTickSpacing(50);
-        thickness.setPaintLabels(true);
-
+        thickness = new JSlider(JSlider.HORIZONTAL, 1, 30, 10);
         putLogo = new JLabel(new ImageIcon("assets/topbar/logo.png"));
         save = new JButton();
         save.setIcon(new ImageIcon("assets/topbar/save.png"));
         clear = new JButton(new ImageIcon("assets/topbar/newDoc.png"));
         help = new JButton(new ImageIcon("assets/topbar/help.png"));
         info = new JButton(new ImageIcon("assets/topbar/info.png"));
+        preview = new PanelPreview();
+
         chooseThickness.add(thickness);
+        chooseThickness.add(preview);
 
         logo.add(putLogo);
 
@@ -75,5 +75,6 @@ public class PanelTopbar extends JPanel implements ActionListener, ChangeListene
 
     public void stateChanged(ChangeEvent e) {
         thicknessValue = thickness.getValue();
+        preview.repaint();
     }
 }

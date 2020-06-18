@@ -69,6 +69,7 @@ public class PanelSidebar extends JPanel implements ActionListener {
         } if (e.getSource() == buttonList[7]) {
             currentToolID = 7;
             currentColor = JColorChooser.showDialog(Main.paint, "Pick a Colour", Color.BLACK);
+            PanelTopbar.preview.repaint();
         }
     }
 }
