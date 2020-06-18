@@ -5,7 +5,7 @@ import java.awt.Graphics;
 public class DrawPen extends DrawTool {
     protected int startX, startY, endX, endY;
     protected Color colour;
-	protected int brushWidth;
+    protected int brushWidth;
     
     public DrawPen(int startX, int startY, int endX, int endY, int brushWidth, Color colour) {
         this.startX = startX;
