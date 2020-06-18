@@ -12,8 +12,11 @@ public class PanelPreview extends JPanel {
         int s = PanelTopbar.thicknessValue;
 
         Graphics2D g2d = (Graphics2D) g;
-        g2d.setColor(PanelSidebar.currentColor);
 
-        g.fillRect(17-s/2, 17-s/2, s, s);
+        g2d.setColor(PanelSidebar.currentColor);
+        g.fillOval(17-s/2, 17-s/2, s, s);
+
+        g2d.setColor(Color.BLACK);
+        g.drawOval(17-s/2, 17-s/2, s, s);
     }
 }
