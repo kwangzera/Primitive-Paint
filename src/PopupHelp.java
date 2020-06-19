@@ -48,7 +48,8 @@ public class PopupHelp {
 
     private JLabel thicknessHelp = new JLabel(
         "<html><p> The thickness slider is located in the topbar, under the section \"Stroke Thickness\". " +
-        "The thickness of a stroke can range from 1px to 25px. " +
+        "The thickness of a stroke can range from 1px to 24px. " +
+        "By default, the stroke thickness is 12px, which is half of the maximum." +
         "On the right of the thickness slider, there is a preview that shows the current stroke color and size. " +
         "In addition, a crosshair is located behind the stroke preview to make it easier to show transparent colors. </p></html>",
         SwingConstants.LEFT);
