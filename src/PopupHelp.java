@@ -40,25 +40,31 @@ public class PopupHelp {
         SwingConstants.LEFT);
 
     private JLabel colourHelp = new JLabel(
-        "<html><p> The color picker is the 8th tool on the sidebar. " +
-        "Click on it to open up prompt where you can choose the current drawing color. " + 
+        "<html><p> The color picker is the 8th button on the sidebar. " +
+        "Click on it to open up prompt where the current drawing color can be chosen. " + 
         "A Basic selection colors can be accessed through the \"Swatches\" tab. " +
         "A more vast selection and transparent colors can be accessed through the \"HSV\", \"HSL\", \"RGB\", and \"CMYK\" tabs. </p></html>",
         SwingConstants.LEFT);
 
     private JLabel thicknessHelp = new JLabel(
-        "<html><p> Drag to change thickness, crosshair to show transparency" +
-        "</p></html>",
+        "<html><p> The thickness slider is located in the topbar, under the section \"Stroke Thickness\". " +
+        "The thickness of a stroke can range from 1px to 25px. " +
+        "On the right of the thickness slider, there is a preview that shows the current stroke color and size. " +
+        "In addition, a crosshair is located behind the stroke preview to make it easier to show transparent colors. </p></html>",
         SwingConstants.LEFT);
 
     private JLabel saveHelp = new JLabel(
-        "<html><p> Click to open to file chooser. Locate to desired path, name your file, and click save." +
-        "</p></html>",
+        "<html><p> The save button is located in the topbar, specifically the first button under the section \"Other Actions\". " +
+        "Click on the save button to bring up a file save prompt." +
+        "The default directory of the prompt will be the same directory as the batch file." +
+        "Once the desired file location to save the image is chosen, click the save button to export the drawing. " +
+        "The image will be exported as a png file, where .png will be automatically added to any save file name entered. </p></html>",
         SwingConstants.LEFT);
 
     private JLabel clearHelp = new JLabel(
-        "<html><p> Clears all drawings from the screen" +
-        "<html><p>",
+        "<html><p> The clear button is located in the topbar, specifically the second button under the section \"Other Actions\". " +
+        "Once clicked, a prompt will appear asking to confirm the clearance of all drawings currently on the canvas. " +
+        "If the answer is yes, then everything will be cleared only leaving a white background. <html><p>",
         SwingConstants.LEFT);
 
     // Parallel arrays for more efficient way of adding these JLabels to the JTabbedPane
@@ -83,4 +89,3 @@ public class PopupHelp {
         dialog.setVisible(true);
     }
 }
-
