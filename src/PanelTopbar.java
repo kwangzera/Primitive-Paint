@@ -7,7 +7,7 @@ public class PanelTopbar extends JPanel implements ActionListener, ChangeListene
     private JButton save, clear, help, info;
     private JSlider thickness;
     private JLabel putLogo;
-    public static int thicknessValue = 10;
+    public static int thicknessValue = 12;
     private PopupHelp helpPanel;
     private PopupFileChooser fileChooser;
     public static PanelPreview preview;
@@ -22,7 +22,7 @@ public class PanelTopbar extends JPanel implements ActionListener, ChangeListene
         chooseThickness.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Line Thickness"));
         extras.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Other Actions"));
 
-        thickness = new JSlider(JSlider.HORIZONTAL, 0, 25, 10);
+        thickness = new JSlider(JSlider.HORIZONTAL, 0, 24, 12);
         putLogo = new JLabel(new ImageIcon("assets/topbar/logo.png"));
         save = new JButton();
         save.setIcon(new ImageIcon("assets/topbar/save.png"));

@@ -19,9 +19,9 @@ public class PanelPreview extends JPanel {
         g2d.drawLine(17, 20, 17, 34);
         g2d.drawLine(20, 17, 34, 17);
 
-        g2d.setStroke(new BasicStroke(1, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
+        g2d.setStroke(new BasicStroke(s, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
         g2d.setColor(PanelSidebar.currentColor);
-        g2d.fill(new Ellipse2D.Double(17-s/2.0, 17-s/2.0, s, s));
+        g2d.drawLine(17, 17, 17, 17);
 
     }
 }
