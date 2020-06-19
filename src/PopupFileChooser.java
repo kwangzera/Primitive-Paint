@@ -8,9 +8,11 @@ public class PopupFileChooser {
     private JFileChooser fileChooser;
 
     public PopupFileChooser(PanelCanvas canvas) {
+        // Copy over canvas items to a BufferedImage
         BufferedImage paintImage = new BufferedImage(canvas.getWidth(), canvas.getHeight(), BufferedImage.TYPE_INT_RGB);
         canvas.paint(paintImage.getGraphics());
 
+        // Current directory
         File userDir = new File(System.getProperty("user.dir"));
 
         fileChooser = new JFileChooser(userDir);
