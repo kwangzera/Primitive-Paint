@@ -20,8 +20,8 @@ public class PanelSidebar extends JPanel implements ActionListener {
 
         ImageIcon[] icons = {
             new ImageIcon("assets/tools/penTool.png"),
-            new ImageIcon("assets/tools/lineTool.png"),
             new ImageIcon("assets/tools/eraserTool.png"),
+            new ImageIcon("assets/tools/lineTool.png"),
             new ImageIcon("assets/tools/ovalBorderTool.png"),
             new ImageIcon("assets/tools/ovalFillTool.png"),
             new ImageIcon("assets/tools/rectBorderTool.png"),
@@ -43,10 +43,10 @@ public class PanelSidebar extends JPanel implements ActionListener {
             PanelCanvas.curr = PanelCanvas.pen;
 
         if (e.getSource() == buttonList[1])
-            PanelCanvas.curr = PanelCanvas.line;
+            PanelCanvas.curr = PanelCanvas.eraser;
 
         if (e.getSource() == buttonList[2])
-            PanelCanvas.curr = PanelCanvas.eraser;
+            PanelCanvas.curr = PanelCanvas.line;
 
         // Shapes
         if (e.getSource() == buttonList[3]) {
