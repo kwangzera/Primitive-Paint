@@ -1,5 +1,4 @@
 import java.awt.*;
-import java.awt.geom.*;
 import javax.swing.*;
 
 public class PanelPreview extends JPanel {
@@ -22,6 +21,5 @@ public class PanelPreview extends JPanel {
         g2d.setStroke(new BasicStroke(s, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
         g2d.setColor(PanelSidebar.currentColor);
         g2d.drawLine(17, 17, 17, 17);
-
     }
 }

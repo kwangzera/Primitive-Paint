@@ -2,15 +2,41 @@ import java.awt.*;
 import javax.swing.*;
 
 public class PopupHelp {
-    private JLabel penHelp = new JLabel("Pen Tool", JLabel.LEFT);
-    private JLabel eraserHelp = new JLabel("Eraser Tool", SwingConstants.LEFT);
-    private JLabel lineHelp = new JLabel("Line Tool", SwingConstants.LEFT);
-    private JLabel ovalHelp = new JLabel("Oval Tool", SwingConstants.LEFT);
-    private JLabel rectHelp = new JLabel("Rect Tool", SwingConstants.LEFT);
-    private JLabel colourHelp = new JLabel("Colour Chooser", SwingConstants.LEFT);
-    private JLabel saveHelp = new JLabel("File Chooser", SwingConstants.LEFT);
-    private JLabel clearHelp = new JLabel("Clear Screen", SwingConstants.LEFT);
+    // Inscribed HTML used for multiline JLabel, end tags not needed
+    // The following formatted in the way it would look in the app
+    private JLabel penHelp = new JLabel(
+        "<html> Click and drag to erase",
+        JLabel.LEFT);
 
+    private JLabel eraserHelp = new JLabel(
+        "<html> Click and drag to erase", 
+        SwingConstants.LEFT);
+
+    private JLabel lineHelp = new JLabel(
+        "<html> Click and drag to create a line", 
+        SwingConstants.LEFT);
+
+    private JLabel ovalHelp = new JLabel(
+        "<html> Click and drag to create a line. Can be filled or border only.", 
+        SwingConstants.LEFT);
+
+    private JLabel rectHelp = new JLabel(
+        "<html> Click and drag to create a line. Can be filled or border only.", 
+        SwingConstants.LEFT);
+
+    private JLabel colourHelp = new JLabel(
+        "<html> Click to choose a color, including transparency", 
+        SwingConstants.LEFT);
+
+    private JLabel saveHelp = new JLabel(
+        "<html> Click to open to file chooser. Locate to desired path, name your file, and click save.", 
+        SwingConstants.LEFT);
+
+    private JLabel clearHelp = new JLabel(
+        "<html> Clears all drawings from the screen", 
+        SwingConstants.LEFT);
+
+    // Parallel arrays for more efficient way of adding these JLabels to the JTabbedPane
     private JLabel[] helpArr = {penHelp, eraserHelp, lineHelp, ovalHelp, rectHelp, colourHelp, saveHelp, clearHelp};
     private String[] headers = {"Pen", "Line", "Eraser", "Oval", "Rectangle", "Colour Picker", "File Chooser", "Clear Screen"};
 
@@ -32,3 +58,4 @@ public class PopupHelp {
         dialog.setVisible(true);
     }
 }
+
