@@ -1,4 +1,2 @@
-*.zip
+# Where all of the .class files go
 bin/
-app/
-instructions.txt
