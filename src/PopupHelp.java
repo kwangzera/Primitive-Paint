@@ -7,21 +7,21 @@ public class PopupHelp {
     private JLabel penHelp = new JLabel(
         "<html><p> The pen tool is the first item on the sidebar and is the defualt tool selected when the app starts. " + 
         "Click on the pen button to set it to the current tool, assuming it is not already. " +
-        "To draw, click once on the canvas to make a dot or click and drag to freehand draw. " +
+        "Click once on the canvas to make a dot or click and drag to freehand draw. " +
         "In addition, its color and size can be changed. </p></html>",
         JLabel.LEFT);
 
     private JLabel eraserHelp = new JLabel(
         "<html><p> The eraser tool is the second item on the sidebar, and is the always the background color of the canvas (white). " +
         "Click on the eraser tool button to set it to the current tool. " + 
-        "To erase, click once on the canvas to erase to dot or click and drag to freehand erase. " +
+        "Click once on the canvas to erase to dot or click and drag to freehand erase. " +
         "Unlike the pen tool, only its size can be changed. </p></html>",
         SwingConstants.LEFT);
 
     private JLabel lineHelp = new JLabel(
         "<html><p> The line tool is the third item on the sidebar. " +
         "Click on the line tool button to set it to the current tool. " +
-        "To draw a line, click and drag. " +
+        "Click once on the canvas to make a dot or click and drag to make a line. " +
         "In addition, its color and size can be changed. </p></html>",
         SwingConstants.LEFT);
 
@@ -41,8 +41,8 @@ public class PopupHelp {
 
     private JLabel colorHelp = new JLabel(
         "<html><p> The color picker is the 8th button on the sidebar. " +
-        "Click on it to open up prompt where the current drawing color can be chosen. " + 
-        "A Basic selection colors can be accessed through the \"Swatches\" tab. " +
+        "Click on it to open up prompt to choose the current drawing color. " + 
+        "A basic selection colors can be accessed through the \"Swatches\" tab. " +
         "A more vast selection and transparent colors can be accessed through the \"HSV\", \"HSL\", \"RGB\", and \"CMYK\" tabs. </p></html>",
         SwingConstants.LEFT);
 
@@ -51,7 +51,7 @@ public class PopupHelp {
         "The thickness of a stroke can range from 1px to 24px. " +
         "By default, the stroke thickness is 12px, which is half of the maximum. " +
         "On the right of the thickness slider, there is a preview that shows the current stroke color and size. " +
-        "In addition, a crosshair is located behind the stroke preview to make it easier to show transparent colors. </p></html>",
+        "In addition, a crosshair is located behind the stroke preview to make it easier to identify transparent colors. </p></html>",
         SwingConstants.LEFT);
 
     private JLabel saveHelp = new JLabel(

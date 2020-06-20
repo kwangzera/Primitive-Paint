@@ -25,7 +25,7 @@ public class PanelTopbar extends JPanel implements ActionListener, ChangeListene
         JPanel extras = new JPanel();
 
         // Create borders around JPanels to divide into corresponding sections
-        chooseThickness.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Line Thickness"));
+        chooseThickness.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Stroke Thickness"));
         extras.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Other Actions"));
 
         // Divided by sections
