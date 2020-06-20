@@ -81,6 +81,7 @@ public class PopupHelp {
             helpArr[i].setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
         }
 
+        // Dialog.ModalityType.DOCUMENT_MODAL makes it so you can't interact with the parent window when the child window is active
         JDialog dialog = new JDialog(Main.paint, "Help", Dialog.ModalityType.DOCUMENT_MODAL);
 
         dialog.add(tp);
