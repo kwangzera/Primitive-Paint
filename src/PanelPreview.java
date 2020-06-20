@@ -10,15 +10,14 @@ public class PanelPreview extends JPanel {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
 
-        int s = PanelTopbar.thicknessValue;
-
         // Crosshair (better show transparency)
         g2d.drawLine(17, 1, 17, 14);
         g2d.drawLine(1, 17, 14, 17);
         g2d.drawLine(17, 20, 17, 34);
         g2d.drawLine(20, 17, 34, 17);
 
-        g2d.setStroke(new BasicStroke(s, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
+        // Drawing the pen strke
+        g2d.setStroke(new BasicStroke(PanelTopbar.thicknessValue, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
         g2d.setColor(PanelSidebar.currentColor);
         g2d.drawLine(17, 17, 17, 17);
     }

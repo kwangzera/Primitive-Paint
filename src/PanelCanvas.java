@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.util.*;
 
 public class PanelCanvas extends JPanel implements MouseMotionListener, MouseListener {
+    // Global ArrayList of DrawTools (strokes) use for painting
     public static ArrayList<DrawTool> shapes = new ArrayList<>();
 
     public static CreateTool eraser = new CreateEraser();
@@ -58,7 +59,7 @@ public class PanelCanvas extends JPanel implements MouseMotionListener, MouseLis
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        // Loops through the ArrayList of and draws them
+        // Loops through the ArrayList of DrawTools (strokes) and draws them
         for (DrawTool i : shapes) {
             i.draw(g);
         }

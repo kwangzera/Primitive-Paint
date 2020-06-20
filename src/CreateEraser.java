@@ -5,7 +5,7 @@ public class CreateEraser extends CreatePen {
         super();
     }
 
-    // Can't directly set the global colour to be white, so temporary color created
+    // If the global color set to white, then have to reset again, so temporary color created
     public Color fetchColor() {
         return Color.WHITE;
     }

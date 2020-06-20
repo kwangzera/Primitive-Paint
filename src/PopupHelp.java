@@ -39,7 +39,7 @@ public class PopupHelp {
         "In addition, its color, size, and style (border only or filled) can be changed. </p></html>",
         SwingConstants.LEFT);
 
-    private JLabel colourHelp = new JLabel(
+    private JLabel colorHelp = new JLabel(
         "<html><p> The color picker is the 8th button on the sidebar. " +
         "Click on it to open up prompt where the current drawing color can be chosen. " + 
         "A Basic selection colors can be accessed through the \"Swatches\" tab. " +
@@ -69,8 +69,8 @@ public class PopupHelp {
         SwingConstants.LEFT);
 
     // Parallel arrays for more efficient way of adding these JLabels to the JTabbedPane
-    private JLabel[] helpArr = {penHelp, eraserHelp, lineHelp, ovalHelp, rectHelp, colourHelp, thicknessHelp, saveHelp, clearHelp};
-    private String[] headers = {"Pen", "Eraser", "Line", "Oval", "Rectangle", "Colour", "Thickness", "Save", "Clear"};
+    private JLabel[] helpArr = {penHelp, eraserHelp, lineHelp, ovalHelp, rectHelp, colorHelp, thicknessHelp, saveHelp, clearHelp};
+    private String[] headers = {"Pen", "Eraser", "Line", "Oval", "Rectangle", "Color", "Thickness", "Save", "Clear"};
 
     public PopupHelp() {
         JTabbedPane tp = new JTabbedPane();
@@ -85,8 +85,8 @@ public class PopupHelp {
 
         dialog.add(tp);
         dialog.setSize(523, 200);
-        dialog.setResizable(false);
         dialog.setLocationRelativeTo(Main.paint);
+        dialog.setResizable(false);
         dialog.setVisible(true);
     }
 }

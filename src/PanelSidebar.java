@@ -3,8 +3,9 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class PanelSidebar extends JPanel implements ActionListener {
-    private JButton pen, line, eraser, ovalE, ovalF, rectE, rectF, colour;
-    private JButton[] buttonList = {pen, line, eraser, ovalE, ovalF, rectE, rectF, colour};
+    // Array of buttons for efficient looping
+    private JButton pen, line, eraser, ovalE, ovalF, rectE, rectF, color;
+    private JButton[] buttonList = {pen, line, eraser, ovalE, ovalF, rectE, rectF, color};
 
     public static Color currentColor = Color.BLACK;
     public static boolean filled = false;
@@ -25,11 +26,13 @@ public class PanelSidebar extends JPanel implements ActionListener {
             new ImageIcon("assets/tools/ovalFillTool.png"),
             new ImageIcon("assets/tools/rectBorderTool.png"),
             new ImageIcon("assets/tools/rectFillTool.png"),
-            new ImageIcon("assets/tools/colourPicker.png")
+            new ImageIcon("assets/tools/colorPicker.png")
         };
 
         for (int i = 0; i < 8; i++) {
+            // Separator
             this.add(Box.createRigidArea(new Dimension(0, 8)));
+
             buttonList[i] = new JButton(icons[i]);
             buttonList[i].addActionListener(this);
             this.add(buttonList[i]);
@@ -64,9 +67,9 @@ public class PanelSidebar extends JPanel implements ActionListener {
             filled = true;
             PanelCanvas.curr = PanelCanvas.rect;
 
-        // Colour chooser
+        // Color chooser
         } if (e.getSource() == buttonList[7]) {
-            Color tempColor = JColorChooser.showDialog(Main.paint, "Pick a Colour", Color.BLACK);
+            Color tempColor = JColorChooser.showDialog(Main.paint, "Pick a Color", Color.BLACK);
 
             if (tempColor != null)
                 currentColor = tempColor;

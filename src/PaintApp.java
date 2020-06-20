@@ -15,7 +15,7 @@ public class PaintApp extends JFrame {
 
         this.setSize(800, 539);
         this.setLocationRelativeTo(null);  // Center of the screen when opened
-        this.setResizable(false);  // Unresizable window
+        this.setResizable(false);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setVisible(true);
     }

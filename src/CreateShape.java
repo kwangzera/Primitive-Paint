@@ -1,11 +1,8 @@
-import java.awt.*;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 
 public class CreateShape extends CreateTool {
-    protected int x1 = -1, y1 = -1;
-    protected int x2 = -1, y2 = -1;
-    protected int width = 0, height = 0;
     protected int newX = 0, newY = 0;
+    protected int width = 0, height = 0;
 
     public void mouseDragged(MouseEvent event) {
         this.x2 = event.getX();
@@ -28,18 +25,13 @@ public class CreateShape extends CreateTool {
 
     }
 
-    public Color fetchColor() {
-        return PanelSidebar.currentColor;
-    }
-
     public DrawShape addShape() {
         alignDrag();
         return new DrawShape(newX, newY, width, height, PanelTopbar.thicknessValue, PanelSidebar.currentColor, PanelSidebar.filled);
-
     }
 
     // The width and height of the shape is created using the start and end points
-    // Mouse dragging is also taken into account
+    // Conditions where the cursor is not southeast of the starting point
     public void alignDrag() {
         width = Math.abs(x2-x1);
         height = Math.abs(y2-y1);
