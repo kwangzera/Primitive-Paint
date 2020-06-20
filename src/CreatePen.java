@@ -8,7 +8,7 @@ public class CreatePen extends CreateTool {
     public void mouseDragged(MouseEvent event) {
         this.x2 = event.getX();
         this.y2 = event.getY();
-        PanelCanvas.shapes.add(new DrawPen(x1, y1, x2, y2, PanelTopbar.thicknessValue, fetchColor()));
+        PanelCanvas.shapes.add(new DrawLine(x1, y1, x2, y2, PanelTopbar.thicknessValue, fetchColor()));
         x1 = x2;
         y1 = y2;
     }
@@ -18,13 +18,13 @@ public class CreatePen extends CreateTool {
         this.y2 = event.getY();
         x1 = x2;
         y1 = y2;
-        PanelCanvas.shapes.add(new DrawPen(x2, y2, x2, y2, PanelTopbar.thicknessValue, fetchColor()));
+        PanelCanvas.shapes.add(new DrawLine(x2, y2, x2, y2, PanelTopbar.thicknessValue, fetchColor()));
     }
 
     public void mouseReleased(MouseEvent event) {
         this.x1 = this.x2 = event.getX();
         this.y1 = this.y2 = event.getY();
-        PanelCanvas.shapes.add(new DrawPen(x2, y2, x2, y2, PanelTopbar.thicknessValue, fetchColor()));
+        PanelCanvas.shapes.add(new DrawLine(x2, y2, x2, y2, PanelTopbar.thicknessValue, fetchColor()));
     }
 
     // Separate method created to set a temporary colour (used in CreateEraser.java)

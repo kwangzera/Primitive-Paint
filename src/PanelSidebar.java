@@ -66,14 +66,11 @@ public class PanelSidebar extends JPanel implements ActionListener {
 
         // Colour chooser
         } if (e.getSource() == buttonList[7]) {
-
             Color tempColor = JColorChooser.showDialog(Main.paint, "Pick a Colour", Color.BLACK);
 
             if (tempColor != null)
                 currentColor = tempColor;
 
-            // if currentColor = JColorChooser.
-            System.out.println(currentColor);
             PanelTopbar.preview.repaint();
         }
     }

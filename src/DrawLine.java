@@ -1,13 +1,12 @@
 import java.awt.*;
 import java.awt.Graphics;
 
-
-public class DrawPen extends DrawTool {
+public class DrawLine extends DrawTool {
     protected int startX, startY, endX, endY;
     protected Color colour;
     protected int brushWidth;
     
-    public DrawPen(int startX, int startY, int endX, int endY, int brushWidth, Color colour) {
+    public DrawLine(int startX, int startY, int endX, int endY, int brushWidth, Color colour) {
         this.startX = startX;
         this.startY = startY;
         this.endX = endX;
