@@ -6,7 +6,6 @@ public class PanelSidebar extends JPanel implements ActionListener {
     private JButton pen, line, eraser, ovalE, ovalF, rectE, rectF, colour;
     private JButton[] buttonList = {pen, line, eraser, ovalE, ovalF, rectE, rectF, colour};
 
-    public static int currentToolID = 0;
     public static Color currentColor = Color.BLACK;
     public static boolean filled = false;
 
@@ -67,8 +66,14 @@ public class PanelSidebar extends JPanel implements ActionListener {
 
         // Colour chooser
         } if (e.getSource() == buttonList[7]) {
-            currentToolID = 7;
-            currentColor = JColorChooser.showDialog(Main.paint, "Pick a Colour", Color.BLACK);
+
+            Color tempColor = JColorChooser.showDialog(Main.paint, "Pick a Colour", Color.BLACK);
+
+            if (tempColor != null)
+                currentColor = tempColor;
+
+            // if currentColor = JColorChooser.
+            System.out.println(currentColor);
             PanelTopbar.preview.repaint();
         }
     }
