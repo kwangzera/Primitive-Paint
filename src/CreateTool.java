@@ -1,9 +1,10 @@
 import java.awt.event.*;
 
 public class CreateTool implements MouseMotionListener, MouseListener {
-    // Set default position to negative, or else will appear on screen
     protected int x1 = -1, y1 = -1;
     protected int x2 = -1, y2 = -1;
+    protected int newX = 0, newY = 0;
+    protected int width = 0, height = 0;
 
     public void mouseDragged(MouseEvent e) {
 

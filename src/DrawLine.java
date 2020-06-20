@@ -3,10 +3,6 @@ import java.awt.Graphics;
 
 // Thie DrawLine class is used for CreatePen, CreateErase, and CreateLine, because those tools all need lines. 
 public class DrawLine extends DrawTool {
-    protected int startX, startY, endX, endY;
-    protected Color color;
-    protected int brushWidth;
-    
     public DrawLine(int startX, int startY, int endX, int endY, int brushWidth, Color color) {
         this.startX = startX;
         this.startY = startY;

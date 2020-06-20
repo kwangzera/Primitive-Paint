@@ -7,6 +7,7 @@ public class PanelCanvas extends JPanel implements MouseMotionListener, MouseLis
     // Global ArrayList of DrawTools (strokes) use for painting
     public static ArrayList<DrawTool> shapes = new ArrayList<>();
 
+    // Global tools
     public static CreateTool eraser = new CreateEraser();
     public static CreateTool pen = new CreatePen();
     public static CreateTool line = new CreateLine();

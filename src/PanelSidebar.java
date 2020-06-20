@@ -7,6 +7,7 @@ public class PanelSidebar extends JPanel implements ActionListener {
     private JButton pen, line, eraser, ovalE, ovalF, rectE, rectF, color;
     private JButton[] buttonList = {pen, line, eraser, ovalE, ovalF, rectE, rectF, color};
 
+    // Global shape attributes
     public static Color currentColor = Color.BLACK;
     public static boolean filled = false;
 

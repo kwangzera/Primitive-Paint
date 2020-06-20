@@ -1,9 +1,6 @@
 import java.awt.event.*;
 
 public class CreateShape extends CreateTool {
-    protected int newX = 0, newY = 0;
-    protected int width = 0, height = 0;
-
     public void mouseDragged(MouseEvent event) {
         this.x2 = event.getX();
         this.y2 = event.getY();

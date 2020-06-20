@@ -13,6 +13,8 @@ public class PanelTopbar extends JPanel implements ActionListener, ChangeListene
 
     private PopupHelp helpPanel;
     private PopupFileChooser fileChooser;
+
+    // preview panel is global
     public static PanelPreview preview;
 
     public PanelTopbar() {
