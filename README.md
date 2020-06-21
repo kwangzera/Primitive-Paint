@@ -1,2 +1,2 @@
 # Primitive Paint
-ICS3U7 Final Project
+Once downloaded, double click run.bat to start the program.
