@@ -1,2 +1,2 @@
 # Primitive Paint
-Once downloaded, double click run.bat to start the program.
+Once downloaded, double click `run.bat` to start the program.
