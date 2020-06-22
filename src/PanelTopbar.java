@@ -80,7 +80,7 @@ public class PanelTopbar extends JPanel implements ActionListener, ChangeListene
             helpPanel = new PopupHelp();
 
         } if (e.getSource() == info) {
-            JOptionPane.showMessageDialog(Main.paint, "Version 1.0.0", "Info", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(Main.paint, "Created by Kevin Wang on 06/20/2020", "Info", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 
