@@ -4,7 +4,7 @@ import javax.swing.*;
 import javax.swing.event.*;
 
 public class PanelTopbar extends JPanel implements ActionListener, ChangeListener {
-    // Defulat value to 12
+    // Default value to 12
     public static int thicknessValue = 12;
 
     private JButton save, clear, help, info;
@@ -14,7 +14,7 @@ public class PanelTopbar extends JPanel implements ActionListener, ChangeListene
     private PopupHelp helpPanel;
     private PopupFileChooser fileChooser;
 
-    // preview panel is global
+    // Preview panel is global
     public static PanelPreview preview;
 
     public PanelTopbar() {

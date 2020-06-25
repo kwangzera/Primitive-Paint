@@ -7,7 +7,6 @@ import javax.swing.filechooser.*;
 public class PopupFileChooser {
     private JFileChooser fileChooser;
 
-    // static? bc it is already used static
     public PopupFileChooser(PanelCanvas canvas) {
         // Copy over canvas items to a BufferedImage
         BufferedImage paintImage = new BufferedImage(canvas.getWidth(), canvas.getHeight(), BufferedImage.TYPE_INT_RGB);
