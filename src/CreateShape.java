@@ -28,7 +28,7 @@ public class CreateShape extends CreateTool {
     }
 
     // The width and height of the shape is created using the start and end points
-    // Conditions where the cursor is not southeast of the starting point
+    // Conditions where the cursor is not southeast of the starting point taken into account
     public void alignDrag() {
         width = Math.abs(x2-x1);
         height = Math.abs(y2-y1);
