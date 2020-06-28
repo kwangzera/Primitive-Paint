@@ -19,7 +19,7 @@ public class PanelBottombar extends JPanel {
         mouse.setHorizontalAlignment(JLabel.CENTER);
         canvas = new JLabel("Canvas: 800px by 600px");
         canvas.setHorizontalAlignment(JLabel.CENTER);
-        currTool = new JLabel("Pen Tool: 12px, #FFFFFF");
+        currTool = new JLabel("Draw: 12px, #FF000000");
         currTool.setHorizontalAlignment(JLabel.CENTER);
         // strokeWidth = new JLabel("Stroke Width: 12px");
         // strokeColor = new JLabel("Stroke Color: #FFFFFF");

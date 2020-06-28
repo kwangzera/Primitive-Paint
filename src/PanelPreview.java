@@ -16,9 +16,12 @@ public class PanelPreview extends JPanel {
         g2d.drawLine(17, 20, 17, 34);
         g2d.drawLine(20, 17, 34, 17);
 
+        // strokeColor is white iff the the current tool is eraser tool.
+        Color strokeColor = (PanelCanvas.curr == PanelCanvas.eraser) ? Color.WHITE : PanelSidebar.currentColor; 
+
         // Drawing the pen stroke
         g2d.setStroke(new BasicStroke(PanelTopbar.thicknessValue, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
-        g2d.setColor(PanelSidebar.currentColor);
+        g2d.setColor(strokeColor);
         g2d.drawLine(17, 17, 17, 17);
     }
 }
