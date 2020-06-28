@@ -31,7 +31,7 @@ public class PanelTopbar extends JPanel implements ActionListener, ChangeListene
         // Divided by sections
         putLogo = new JLabel(new ImageIcon("assets/topbar/logo.png"));
 
-        thickness = new JSlider(JSlider.HORIZONTAL, 1, 24, 12);
+        thickness = new JSlider(JSlider.HORIZONTAL, 0, 24, 12);
         preview = new PanelPreview();
 
         save = new JButton(new ImageIcon("assets/topbar/save.png"));
@@ -86,7 +86,7 @@ public class PanelTopbar extends JPanel implements ActionListener, ChangeListene
 
     public void stateChanged(ChangeEvent e) {
         thicknessValue = thickness.getValue();
-        PanelBottombar.currTool.setText("Draw: "+thicknessValue+"px, #"+Integer.toHexString(PanelSidebar.currentColor.getRGB()).toUpperCase());
+        PanelBottombar.currTool.setText(""+thicknessValue+", "+PanelSidebar.currentColor);
 
         // Updates preview every time the slider is dragged
         preview.repaint();

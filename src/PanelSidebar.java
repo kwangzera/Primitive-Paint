@@ -74,8 +74,8 @@ public class PanelSidebar extends JPanel implements ActionListener {
 
             if (tempColor != null)
                 currentColor = tempColor;
+
+            PanelTopbar.preview.repaint();
         }
-        
-        PanelTopbar.preview.repaint();
     }
 }
