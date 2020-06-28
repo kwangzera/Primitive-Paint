@@ -86,6 +86,7 @@ public class PanelTopbar extends JPanel implements ActionListener, ChangeListene
 
     public void stateChanged(ChangeEvent e) {
         thicknessValue = thickness.getValue();
+        PanelBottombar.currTool.setText(""+thicknessValue+", "+PanelSidebar.currentColor);
 
         // Updates preview every time the slider is dragged
         preview.repaint();
