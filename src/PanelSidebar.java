@@ -77,6 +77,8 @@ public class PanelSidebar extends JPanel implements ActionListener {
         }
         
         PanelTopbar.preview.repaint();
+
+        // Make this into a function or something
         Color strokeColor = (PanelCanvas.curr == PanelCanvas.eraser) ? Color.WHITE : PanelSidebar.currentColor; 
         PanelBottombar.currTool.setText(String.format("Stroke: %spx, #%s", PanelTopbar.thickness.getValue(), Integer.toHexString(strokeColor.getRGB()).toUpperCase()));
     }
