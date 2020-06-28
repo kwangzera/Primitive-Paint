@@ -9,7 +9,7 @@ public class PanelTopbar extends JPanel implements ActionListener, ChangeListene
 
     private JButton save, clear, help, info;
     private JLabel putLogo;
-    private JSlider thickness;
+    public static JSlider thickness;
 
     private PopupHelp helpPanel;
     private PopupFileChooser fileChooser;
@@ -86,7 +86,9 @@ public class PanelTopbar extends JPanel implements ActionListener, ChangeListene
 
     public void stateChanged(ChangeEvent e) {
         thicknessValue = thickness.getValue();
-        PanelBottombar.currTool.setText("Draw: "+thicknessValue+"px, #"+Integer.toHexString(PanelSidebar.currentColor.getRGB()).toUpperCase());
+
+        Color strokeColor = (PanelCanvas.curr == PanelCanvas.eraser) ? Color.WHITE : PanelSidebar.currentColor; 
+        PanelBottombar.currTool.setText(String.format("Stroke: %spx, #%s", thicknessValue, Integer.toHexString(strokeColor.getRGB()).toUpperCase()));
 
         // Updates preview every time the slider is dragged
         preview.repaint();

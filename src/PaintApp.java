@@ -8,6 +8,10 @@ public class PaintApp extends JFrame {
     public static PanelTopbar topbar = new PanelTopbar();
     public static PanelBottombar bottombar = new PanelBottombar();
 
+    // Canvas width and height for the bottombar
+    public static int canvasWidth = canvas.getWidth();
+    public static int canvasHeight = canvas.getHeight();
+
     public PaintApp() {
         super("Primitive Paint");
 
@@ -19,13 +23,14 @@ public class PaintApp extends JFrame {
         this.add(topbar, "North");
         this.add(sidebar, "West");
         this.add(newCanvas, "Center");
-        // this.add(bottombar, BorderLayout.CENTER);
-
 
         this.setSize(800, 539);
         this.setLocationRelativeTo(null);  // Center of the screen when opened
         this.setResizable(false);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setVisible(true);
+
+        // Setting canvas width and height after placing it down
+        PanelBottombar.canvas.setText(String.format("Canvas: %spx by %spx", canvas.getWidth(), canvas.getHeight()));
     }
 }

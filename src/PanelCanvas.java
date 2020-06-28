@@ -25,7 +25,7 @@ public class PanelCanvas extends JPanel implements MouseMotionListener, MouseLis
 
     // Calls the mouseDragged method in the current tool
     public void mouseDragged(MouseEvent e) {
-        PanelBottombar.mouse.setText(""+e.getX()+"px, "+e.getY()+"px");
+        PanelBottombar.mouse.setText(String.format("Mouse: %spx, %spx", e.getX(), e.getY()));
         this.curr.mouseDragged(e);
         this.repaint();
     }
@@ -43,7 +43,7 @@ public class PanelCanvas extends JPanel implements MouseMotionListener, MouseLis
     }
 
     public void mouseMoved(MouseEvent e) {
-        PanelBottombar.mouse.setText("Mouse: "+e.getX()+"px, "+e.getY()+"px");
+        PanelBottombar.mouse.setText(String.format("Mouse: %spx, %spx", e.getX(), e.getY()));
     }
 
     public void mouseClicked(MouseEvent e){
