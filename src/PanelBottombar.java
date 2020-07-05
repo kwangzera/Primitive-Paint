@@ -1,5 +1,4 @@
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
 
 public class PanelBottombar extends JPanel {
@@ -15,20 +14,42 @@ public class PanelBottombar extends JPanel {
     public PanelBottombar() {
         super(new GridLayout());
 
-        mouse = new JLabel("Mouse: 0px, 0px");
-        mouse.setHorizontalAlignment(JLabel.CENTER);
+        JPanel mouseLabel = new JPanel();
+        JPanel canvasLabel = new JPanel();
+        JPanel currToolLabel = new JPanel();
+
+        // Adding things in for the mouseLabel
+        mouse = new JLabel("Position: 0px, 0px");
+        mouseLabel.setAlignmentX(CENTER_ALIGNMENT);
+        mouseLabel.add(new JLabel(new ImageIcon("assets/bottombar/cursor.png")));
+        mouseLabel.add(mouse);
+        // mouseLabel.setBorder(BorderFactory.createCompoundBorder(
+        //     BorderFactory.createMatteBorder(0, 1, 0, 0, new Color(166, 166, 166)),
+        //     BorderFactory.createMatteBorder(0, 1, 0, 0, Color.WHITE)
+        // ));
+
+        // Adding things in for the canvasLabel
         canvas = new JLabel("Canvas: 0px by 0px");
-        canvas.setHorizontalAlignment(JLabel.CENTER);
+        canvasLabel.setAlignmentX(CENTER_ALIGNMENT);
+        canvasLabel.add(new JLabel(new ImageIcon("assets/bottombar/canvas.png")));
+        canvasLabel.add(canvas);
+        // canvasLabel.setBorder(BorderFactory.createCompoundBorder(
+        //     BorderFactory.createMatteBorder(0, 1, 0, 0, new Color(166, 166, 166)),
+        //     BorderFactory.createMatteBorder(0, 1, 0, 0, Color.WHITE)
+        // ));
+
+        // Adding things in for the currToolLabel
         currTool = new JLabel("Stroke: 12px, #FF000000");
-        currTool.setHorizontalAlignment(JLabel.CENTER);
-        // strokeWidth = new JLabel("Stroke Width: 12px");
-        // strokeColor = new JLabel("Stroke Color: #FFFFFF");
 
-        this.add(mouse);
-        this.add(canvas);
-        this.add(currTool);
-        // this.add(strokeWidth);
-        // this.add(strokeColor);
+        currToolLabel.add(new JLabel(new ImageIcon("assets/bottombar/stroke.png")));
+        currToolLabel.add(currTool);
+        // currToolLabel.setBorder(BorderFactory.createCompoundBorder(
+        //     BorderFactory.createMatteBorder(0, 1, 0, 0, new Color(166, 166, 166)),
+        //     BorderFactory.createMatteBorder(0, 1, 0, 0, Color.WHITE)
+        // ));
 
+        this.add(mouseLabel);
+        this.add(canvasLabel);
+        this.add(currToolLabel);
     }
 }

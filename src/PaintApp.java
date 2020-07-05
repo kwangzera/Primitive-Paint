@@ -18,7 +18,7 @@ public class PaintApp extends JFrame {
         // Created a new JPanel to format the bottombar
         newCanvas.add(canvas, BorderLayout.CENTER);
         newCanvas.add(bottombar, BorderLayout.SOUTH);
-
+        
         // Adding each separate component into the main JFrame
         this.add(topbar, "North");
         this.add(sidebar, "West");
