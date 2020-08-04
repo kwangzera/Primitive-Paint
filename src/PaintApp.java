@@ -24,7 +24,7 @@ public class PaintApp extends JFrame {
         this.add(sidebar, "West");
         this.add(newCanvas, "Center");
 
-        this.setSize(800, 539);
+        this.setSize(808, 549);
         this.setLocationRelativeTo(null);  // Center of the screen when opened
         this.setResizable(false);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
