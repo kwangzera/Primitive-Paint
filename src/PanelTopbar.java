@@ -29,7 +29,7 @@ public class PanelTopbar extends JPanel implements ActionListener, ChangeListene
         extras.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Other Actions"));
 
         // Divided by sections
-        putLogo = new JLabel(new ImageIcon("assets/topbar/logo.png"));
+        putLogo = new JLabel(new ImageIcon("assets/topbar/banner.png"));
 
         thickness = new JSlider(JSlider.HORIZONTAL, 1, 24, 12);
         preview = new PanelPreview();
