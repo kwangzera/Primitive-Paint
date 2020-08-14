@@ -28,6 +28,7 @@ public class PaintApp extends JFrame {
         this.setLocationRelativeTo(null);  // Center of the screen when opened
         this.setResizable(false);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage("assets/logo.png"));
         this.setVisible(true);
 
         // Setting canvas width and height after placing it down

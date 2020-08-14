@@ -94,7 +94,7 @@ public class PopupHelp {
         JDialog dialog = new JDialog(Main.paint, "Help", Dialog.ModalityType.DOCUMENT_MODAL);
 
         dialog.add(tp);
-        dialog.setSize(523, 200);
+        dialog.setSize(526, 200);
         dialog.setLocationRelativeTo(Main.paint);
         dialog.setResizable(false);
         dialog.setVisible(true);
