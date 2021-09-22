@@ -7,7 +7,6 @@ public class CreateShape extends CreateTool {
 
         // Keep on replacing the last ArrayList value, shape changes sizes when repaint() called
         PanelCanvas.shapes.set(PanelCanvas.shapes.size()-1, addShape());
-
     }
 
     public void mousePressed(MouseEvent event) {
