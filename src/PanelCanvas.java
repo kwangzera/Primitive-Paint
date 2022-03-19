@@ -46,15 +46,15 @@ public class PanelCanvas extends JPanel implements MouseMotionListener, MouseLis
         PanelBottombar.mouse.setText(String.format("Position: %spx, %spx", e.getX(), e.getY()));
     }
 
-    public void mouseClicked(MouseEvent e){
+    public void mouseClicked(MouseEvent e) {
 
     }
 
-    public void mouseEntered(MouseEvent e){
+    public void mouseEntered(MouseEvent e) {
 
     }
 
-    public void mouseExited(MouseEvent e){
+    public void mouseExited(MouseEvent e) {
 
     }
 
